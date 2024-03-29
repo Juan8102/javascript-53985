@@ -1,4 +1,4 @@
-let comprando = true;
+/* let comprando = true;
 let juegos = "";
 let total = 0;
 
@@ -51,4 +51,4 @@ while (comprando) {
     else {
         comprando = false;
     }
-}
+} */
