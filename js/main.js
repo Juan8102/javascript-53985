@@ -5,8 +5,9 @@ const products = [
     {id: 4, name: "Leche descremada", price: 2100},
     {id: 5, name: "Docena de huevos", price: 2600}
 ];
-let cart = [];
 
+const cartLimit = 10;
+let cart = [];
 let cartProducts = "";
 let cartTotal = 0;
 
@@ -19,9 +20,9 @@ function showCartProducts() {
     }
 }
 
-function removeCartProduct(chosenProduct, message) {
-    showCartProducts();
-    chosenProduct = parseInt(prompt(message));
+function removeCartProduct(chosenProduct) {
+    showCartProducts()
+    chosenProduct = parseInt(prompt("EDITANDO CARRITO...\nIngresa el ID del producto que quieras eliminar de tu carrito:\n\nTus productos:\n" + cartProducts + "\nTotal: $" + cartTotal + "\nSi ya no quieres editar tu carrito ingresa 0."));
     if (chosenProduct > 0) {
         const availableProducts = [];
         for (const product of cart) {
@@ -30,31 +31,31 @@ function removeCartProduct(chosenProduct, message) {
         if (availableProducts.includes(chosenProduct)) {
             for (const product of cart) {
                 if (chosenProduct == product.id) {
-                    const productIndex = cart.indexOf(product)
-                    cart.splice(productIndex, 1)
+                    const productIndex = cart.indexOf(product);
+                    cart.splice(productIndex, 1);
                     break
                 }
             }
 
             if (cart.length == 0) {
-                alert("Producto eliminado exitosamente.\nAhora tu carrito esta vacío.")
+                alert("PRODUCTO ELIMINADO\nAhora tu carrito esta vacío.");
                 buy();
             }
             else {
-                showCartProducts();
-                message = "Producto eliminado exitosamente.\nIngresa el ID de otro producto que quieras eliminar:\n" + cartProducts + "\nTotal: $" + cartTotal;
-                removeCartProduct(message);
+                removeCartProduct();
             }
         }
         else {
-            alert("El ID que has ingresado no pertenece a ningún producto.\nIntentalo de nuevo.")
+            alert("PRODUCTO NO ENCONTRADO\nEl ID que has ingresado no pertenece a ningún producto.\nIntentalo de nuevo.");
+            removeCartProduct();
         }
     }
     else if (chosenProduct == 0) {
         buy();
     }
     else {
-        alert("El ID que has ingresado no pertenece a ningún producto.\nIntentalo de nuevo.")
+        alert("ERROR\nSe ha producido un error desconocido, intentalo de nuevo.");
+        removeCartProduct();
     }
 }
 
@@ -64,43 +65,52 @@ function buy() {
         shownProducts += "ID: " + product.id + " - " + product.name + " - $" + product.price + "\n";
     }
 
-    let chosenProduct = parseInt(prompt("Ingresa el ID del producto que quieres añadir a tu carrito.\n" + shownProducts + '\nSi quieres editar tu carrito ingresa 0.\nSi ya has terminado de comprar ingresa 100.'));
-    if (chosenProduct != 0 && chosenProduct != 100) {
+    let chosenProduct = prompt("COMPRANDO PRODUCTOS...\nIngresa el ID del producto que quieres añadir a tu carrito.\n\nProductos:\n" + shownProducts + '\nSi quieres editar tu carrito ingresa 0.\nSi ya has terminado de comprar no ingreses nada.');
+    if (chosenProduct > 0 && chosenProduct.length != 0) {
         if (chosenProduct >= 1 && chosenProduct <= products.length) {
-            for (const product of products) {
-                if (chosenProduct == product.id) {
-                    cart.push(product);
-                    alert("Se ha añadido " + product.name + " a tu carrito.")
-                    break
+            if (cart.length < cartLimit) {
+                for (const product of products) {
+                    if (chosenProduct == product.id) {
+                        cart.push(product);
+                        alert("PRODUCTO AÑADIDO\nSe ha añadido " + product.name + " a tu carrito.");
+                        break
+                    }
                 }
+                buy();
             }
-            buy();
+            else {
+                alert("CARRITO LLENO\nTu carrito esta lleno, elimina algún producto de tu carrito para agregar otro.");
+                buy();
+            }
         }
         else {
-            alert("El ID que has ingresado no pertenece a ningún producto.\nIntentalo de nuevo.")
+            alert("PRODUCTO NO ENCONTRADO\nEl ID que has ingresado no pertenece a ningún producto.\nIntentalo de nuevo.");
             buy();
         }
     }
-    else if (chosenProduct == 0) {
+    else if (chosenProduct == 0 && chosenProduct.length != 0) {
         if (cart.length != 0) {
-            let message = "Ingresa el ID del producto que quieras eliminar:\n" + cartProducts + "\nTotal: $" + cartTotal + "\n  Si ya no quieres editar tu carrito ingresa 0.";
-            removeCartProduct(chosenProduct, message);
+            removeCartProduct(chosenProduct);
         }
         else {
-            alert("Tu carrito esta vacío :(")
+            alert("CARRITO VACÍO\nTu carrito esta vacío, por lo tanto, no puedes editarlo.");
             buy();
         }
     }
-    else if (chosenProduct == 100) {
+    else if (chosenProduct.length == 0) {
         if (cart.length != 0) {
             showCartProducts();
-            alert("Este es tu carrito:\n" + cartProducts + "\nTotal: $" + cartTotal);
+            alert("COMPRA FINALIZADA\n\nEste es tu carrito:\n" + cartProducts + "\nTotal: $" + cartTotal);
             buying = false;
         }
         else {
             alert("¡Vuelve pronto!");
             buying = false;
         }
+    }
+    else {
+        alert("ERROR\nSe ha producido un error desconocido, intentalo de nuevo.");
+        buy();
     }
 }
 
