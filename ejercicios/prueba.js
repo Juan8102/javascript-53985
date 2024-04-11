@@ -36,32 +36,55 @@ function editCartProduct(chosenProduct) {
             availableProducts.push(product.id);
         }
         if (availableProducts.includes(chosenProduct)) {
+            let productsFounded = 0;
+            let productFounded;
             for (const product of cart) {
                 if (chosenProduct == product.id) {
-                    const productIndex = cart.indexOf(product);
-                    cart.splice(productIndex, 1);
-                    break
+                    productFounded = product;
+                    productsFounded++;
                 }
             }
 
-            if (cart.length == 0) {
-                alert("PRODUCTO ELIMINADO\nAhora tu carrito esta vacío.");
-                buy();
+            const quantity = parseInt(prompt("Tienes " + productsFounded + " productos iguales en tu carrito.\n¿Cuantos quieres eliminar?\n\nIngresa 0 para cancelar."))
+            if (quantity > 0 && quantity <= productsFounded) {
+                let mensaje;
+                for (let i = 1; i <= quantity; i++) {
+                    const productIndex = cart.indexOf(productFounded);
+                    cart.splice(productIndex, 1);
+                }
+
+                if (cart.length == 0) {
+                    if (quantity > 1) {
+                        mensaje = "PRODUCTOS ELIMINADOS\nAhora tu carrito esta vacío.";
+                    }
+                    else {
+                        mensaje = "PRODUCTO ELIMINADO\nAhora tu carrito esta vacío.";
+                    }
+                    alert(mensaje);
+                    buy();
+                }
+                else {
+                    editCartProduct();
+                }
+            }
+            else if (quantity > productsFounded) {
+                alert("CANTIDAD EXCEDENTE\nHas ingresado una cantidad mayor a la cantidad de productos que tienes, intentalo de nuevo.")
+                editCartProduct();
+            }
+            else if (quantity == 0) {
+                editCartProduct();
             }
             else {
+                alert("ERROR\nSe ha producido un error inesperado, intentalo de nuevo.")
                 editCartProduct();
             }
         }
         else {
-            alert("PRODUCTO NO ENCONTRADO\nEl ID que has ingresado no pertenece a ningún producto.\nIntentalo de nuevo.");
+            alert("PRODUCTO NO ENCONTRADO\nEl ID que has ingresado no pertenece a ningún producto.");
             editCartProduct();
         }
     }
-    else if (chosenProduct == 0) {
-        buy();
-    }
     else {
-        alert("ERROR\nSe ha producido un error inesperado, intentalo de nuevo.");
         editCartProduct();
     }
 }
@@ -73,17 +96,44 @@ function goodbye(chosenProduct) {
         if (cart.length != 0) {
             showCartProducts();
             alert("COMPRA FINALIZADA\n\nEste es tu carrito:\n" + cartProducts + "\nTotal: $" + cartTotal);
-            buying = false;
         }
         else {
             alert("¡Vuelve pronto!");
-            buying = false;
         }
     }
-    else {
-        alert("ERROR\nSe ha producido un error inesperado, intentalo de nuevo.");
-        buy();
+}
+
+function addProductToCart(chosenProduct) {
+    const spaceLeft = cartLimit - cart.length;
+    for (const product of products) {
+        if (chosenProduct == product.id) {
+            const quantity = parseInt(prompt("¿Cuantos productos de estos quieres agregar a tu carrito?\nTe quedan " + spaceLeft + " espacios en tu carrito.\n\nNo ingreses nada para cancelar."));
+            if (quantity <= spaceLeft && quantity > 1 && quantity != 0) {
+                for (let i = 1; i <= quantity; i++) {
+                    cart.push(product)
+                }
+                alert("PRODUCTOS AÑADIDOS\nSe han añadido " + "x" + quantity + " " + product.name + " a tu carrito.");
+                break
+            }
+            else if (quantity > spaceLeft) {
+                alert("LÍMITE DEL CARRITO EXCEDIDO\nLa cantidad de productos que quieres agregar a tu carrito exceden su límite.");
+                addProductToCart();
+            }
+            else if (quantity == 1) {
+                cart.push(product);
+                alert("PRODUCTO AÑADIDO\nSe ha añadido " + product.name + " a tu carrito.");
+                break
+            }
+            else if (quantity <= 0) {
+                alert("ERROR\nSe ha producido un error inesperado, intentalo de nuevo.")
+                addProductToCart();
+            }
+            else {
+                buy();
+            }
+        }
     }
+    buy();
 }
 
 /* This function it's always called first, otherwise, the program wouldn't work well. It asks the user what product does it want to add to its cart by typing the product ID.
@@ -100,14 +150,7 @@ function buy() {
     if (chosenProduct > 0 && chosenProduct.length != 0) {
         if (chosenProduct >= 1 && chosenProduct <= products.length) {
             if (cart.length < cartLimit) {
-                for (const product of products) {
-                    if (chosenProduct == product.id) {
-                        cart.push(product);
-                        alert("PRODUCTO AÑADIDO\nSe ha añadido " + product.name + " a tu carrito.");
-                        break
-                    }
-                }
-                buy();
+                addProductToCart(chosenProduct);
             }
             else {
                 alert("CARRITO LLENO\nTu carrito esta lleno, elimina algún producto de tu carrito para agregar otro.");
@@ -115,7 +158,7 @@ function buy() {
             }
         }
         else {
-            alert("PRODUCTO NO ENCONTRADO\nEl ID que has ingresado no pertenece a ningún producto.\nIntentalo de nuevo.");
+            alert("PRODUCTO NO ENCONTRADO\nEl ID que has ingresado no pertenece a ningún producto.");
             buy();
         }
     }

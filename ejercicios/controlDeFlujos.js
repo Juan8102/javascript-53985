@@ -42,3 +42,17 @@ else if (numero2 > 50) {
 else {
     alert("No has ingresado ningún número.")
 }*/
+
+// EJERCICIO 4
+/*let num1 = parseInt(prompt("Ingresa un número."));
+let num2 = parseInt(prompt("Ingresa otro número."));
+
+if (num1 > num2) {
+    alert("El primer numero es mayor al segundo. " + "(" + num1 + " > " + num2 + ")")
+}
+else if (num2 > num1) {
+    alert("El segundo numero es mayor al primero. " + "(" + num2 + " > " + num1 + ")")
+}
+else {
+    alert("Los dos numeros son iguales. " + "(" + num1 + " = " + num2 + ")")
+}*/
