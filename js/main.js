@@ -33,7 +33,7 @@ const juegos = [
     {titulo: "Resident Evil 3",        precio: 29.99, stock: 21, disponibilidad: true},*/
 ];
 const limiteCarrito = 5;
-let carrito = [];
+let carrito;
 
 //Estados del cliente
 const verificando = true;
@@ -41,9 +41,9 @@ let iniciando = true;
 let comprando = false;
 
 const clientes = [
-    {nombre: "Lucas", apellido: "Lopez", nombreUsuario: "LucasLopez1", contrasena: "lucas_lopez1", fondos: 47, bloqueado: false},
-    {nombre: "Rodrigo", apellido: "Rio", nombreUsuario: "RodrigoRio2", contrasena: "rodrigo_rio2", fondos: 60, bloqueado: false},
-    {nombre: "David", apellido: "Resca", nombreUsuario: "DavidResca3", contrasena: "david_resca3", fondos: 52, bloqueado: false},
+    {nombre: "Lucas", apellido: "Lopez", nombreUsuario: "LucasLopez1", contrasena: "lucas_lopez1", fondos: 47, carrito: [], bloqueado: false},
+    {nombre: "Rodrigo", apellido: "Rio", nombreUsuario: "RodrigoRio2", contrasena: "rodrigo_rio2", fondos: 60, carrito: [], bloqueado: false},
+    {nombre: "David", apellido: "Resca", nombreUsuario: "DavidResca3", contrasena: "david_resca3", fondos: 52, carrito: [], bloqueado: false},
 ]
 let clienteActual;
 
@@ -57,7 +57,8 @@ function pago(carritoEscrito, totalAPagar) {
             alert("¡Listo! Tu compra se ha completado con exito. En breves te enviaremos un correo electronico con las claves de tus juegos.\n\n¡Gracias por confiar en nosotros! Esperamos volver a verte pronto :)");
         }
         else { //Si los fondos del cliente son menores al total a pagar
-            alert("¡Ups! No cuentas con los fondos suficiente para completar el pago.\nElimina productos de tu carrito e intentalo de nuevo.\n\n\nSe te redirigirá al panel de gestión de tu carrito.");
+            alert("¡Ups! No cuentas con los fondos suficientes para completar el pago.\nElimina productos de tu carrito e intentalo de nuevo.\n\n\nSe te redirigirá al panel de gestión de tu carrito.");
+            mostrarCarrito();
         }
     }
     else if (respuestaPago.trim() === "cancelar") { //Se utiliza el método trim() por si el usuario ingresa inintencionadamente espacios al querer cancelar
@@ -70,6 +71,12 @@ function pago(carritoEscrito, totalAPagar) {
 }
 
 function mostrarCuenta() {
+    if (clienteActual.fondos.toString().length > 5) { //Si los fondos del cliente tienen mas de 2 decimales, lo siguiente los reducirá a dos
+        let totalPor100 = clienteActual.fondos * 100; //Se multiplican los fondos del cliente por 100 para desplazar los decimales
+        let totalRedondeado = Math.round(totalPor100); //Se redondea el número multiplicado
+        let total = totalRedondeado / 100; //Se divide entre 100 para volver a la escala original
+        clienteActual.fondos = total;
+    }
     const mostrarDatos = `Datos personales:\n- Nombre: ${clienteActual.nombre}\n- Apellido: ${clienteActual.apellido}\n\nFondos: $${clienteActual.fondos}`;
     alert(mostrarDatos);
     mostrarJuegos();
@@ -112,32 +119,33 @@ function editarCarrito(carritoEscrito) {
 
 function agregarAlCarrito(juegosEncontrados) {
     const espacioCarrito = limiteCarrito - carrito.length; //Cálculo del espacio restante del carrito
-    if (juegosEncontrados[0].disponibilidad) {
-        let cantidadJuegos = "";
-        if (espacioCarrito > 1) {
-            const mensajeCantidadJuegos = parseInt(prompt(`¿Cuantas unidades de este juego quieres agregar a tu carrito?\nTe quedan ${espacioCarrito} espacios.\nIngresa 0 para cancelar.`));
-            cantidadJuegos = mensajeCantidadJuegos;
+    if (juegosEncontrados[0].disponibilidad) { //Si el juego esta disponbible
+        let cantidadJuegos = ""; //Instanciación de la variable que le va a preguntar al cliente cuantas unidades quiere agregara a su carrito 
+        if (espacioCarrito > 1) { //Si al cliente le queda mas de un espacio en el carrito se le mostrará un mensaje en plural
+            cantidadJuegos = parseInt(prompt(`¿Cuantas unidades de este juego quieres agregar a tu carrito?\nTe quedan ${espacioCarrito} espacios.\nIngresa 0 para cancelar.`));
         }
-        else {
-            const mensajeCantidadJuegos = parseInt(prompt("¿Cuantas unidades de este juego quieres agregar a tu carrito?\nTe queda 1 espacio.\nIngresa 0 para cancelar."));
-            cantidadJuegos = mensajeCantidadJuegos;
+        else { //Si al cliente le queda un solo espacio en el carrito se le mostrará un mensaje en singular
+            cantidadJuegos = parseInt(prompt(`¿Cuantas unidades de este juego quieres agregar a tu carrito?\nTe queda 1 espacio.\nIngresa 0 para cancelar.`));
         }
 
-        if (cantidadJuegos > 1 && cantidadJuegos <= espacioCarrito) { //Si el cliente quiere agregar mas de un producto a su carrito, se mostrará el mensaje en plural
+        if (cantidadJuegos > 0 && cantidadJuegos <= espacioCarrito) { //Si el cliente quiere agregar mas de un producto a su carrito, se mostrará el mensaje en plural
             for(let i = 1; i <= cantidadJuegos; i++) { //Se agrega el producto la cantidad de veces que el cliente ingresó
                 carrito.push(juegosEncontrados[0]);
             }
-            alert(`Se han agregado ${cantidadJuegos}x ${juegosEncontrados[0].titulo} a tu carrito`);
+            if (cantidadJuegos > 1) {
+                alert(`Se han agregado ${cantidadJuegos}x ${juegosEncontrados[0].titulo} a tu carrito`);
+            }
+            else {
+                alert(`Se ha agregado ${juegosEncontrados[0].titulo} a tu carrito`);
+            }
         }
-        else if (cantidadJuegos === 1) { //Si el cliente solo quiere agregar un producto a su carrito, se mostrará el mensaje en singular
-            carrito.push(juegosEncontrados[0]);
-            alert(`Se ha agregado ${juegosEncontrados[0].titulo} a tu carrito`);
-        }
-        else if (cantidadJuegos > espacioCarrito && espacioCarrito > 1) { //Si la cantidad de juegos que el cliente quiere agregar a su carrito excede el limite y queda mas de un espacio en el carrito
-            alert(`La cantidad de unidades que quieres agregar a tu carrito exceden su límite. Recuerda que tu carrito tiene un límite de ${limiteCarrito} unidades.\nTe quedan ${espacioCarrito} espacios.\n\nSe te redirigirá al menú principal.`);
-        }
-        else if (cantidadJuegos > espacioCarrito && espacioCarrito === 1) { //Si la cantidad de juegos que el cliente quiere agregar a su carrito excede el limite y queda un espacio en el carrito
-            alert(`La cantidad de unidades que quieres agregar a tu carrito exceden su límite. Recuerda que tu carrito tiene un límite de ${limiteCarrito} unidades.\nTe queda 1 espacio.\n\nSe te redirigirá al menú principal.`);
+        else if (cantidadJuegos > espacioCarrito) { //Si la cantidad de juegos que el cliente quiere agregar a su carrito excede el limite y queda mas de un espacio en el carrito
+            if (espacioCarrito > 1) {
+                alert(`La cantidad de unidades que quieres agregar a tu carrito exceden su límite. Recuerda que tu carrito tiene un límite de ${limiteCarrito} unidades.\nTe quedan ${espacioCarrito} espacios.\n\nSe te redirigirá al menú principal.`);
+            }
+            else {
+                alert(`La cantidad de unidades que quieres agregar a tu carrito exceden su límite. Recuerda que tu carrito tiene un límite de ${limiteCarrito} unidades.\nTe queda 1 espacio.\n\nSe te redirigirá al menú principal.`);
+            }
         }
         else if (cantidadJuegos !== 0) { //Si el cliente ingresa un número negativo u otro tipo de dato
             alert("Se ha producido un error.\nPor favor, intentalo de nuevo.\n\nSe te redirigirá al menú principal.");
@@ -285,6 +293,7 @@ function inicioSesion() {
                         }
                         else { //Si la cuenta NO esta bloqueada
                             clienteActual = buscarCliente; //Se guarda el usuario que acaba de iniciar sesion en el cliente actual, para que se pueda trabajar con él en el pago
+                            carrito = clienteActual.carrito; //Se asigna el carrito del cliente al carrito actual
                             iniciando = false; //Se deja de llamar automáticamente a la función inicioSesion()
                             comprando = true; //Se empieza a llamar automáticamente a la función mostrarJuegos()
                             alert(`¡Bienvenido ${clienteActual.nombre} ${clienteActual.apellido}!`);
