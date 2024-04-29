@@ -69,7 +69,7 @@ const textoRangoPrecio = document.getElementById("price__range__text");
 barraDeBusqueda.addEventListener("input", filtrarProductos);
 rangoPrecio.addEventListener("input", filtrarProductos)
 
-function filtrarProductos() { // SEPARAR EN VARIAS FUNCIONES
+function filtrarProductos() {
     contenedorProductos.innerHTML = "";
     
     //Filtro de precio
@@ -82,6 +82,8 @@ function filtrarProductos() { // SEPARAR EN VARIAS FUNCIONES
         textoRangoPrecio.innerText = "Any price";
     }
 
+    const productosFiltradosPrecio = productos.filter((el) => el.precio <= valorRangoPrecio);
+
     //Busqueda directa
     const busquedaProducto = barraDeBusqueda.value;
 
@@ -92,14 +94,7 @@ function filtrarProductos() { // SEPARAR EN VARIAS FUNCIONES
         textoIndicadorDeBusqueda .innerText = "All games";
     }
 
-    const productosFiltradosPrecio = productos.filter((el) => {
-        return el.precio <= valorRangoPrecio;
-    })
-
-    const productosFiltrados = productosFiltradosPrecio.filter((el) => {
-        return el.titulo.toLowerCase().includes(busquedaProducto.toLowerCase());
-    })
-
+    const productosFiltrados = productosFiltradosPrecio.filter((el) => el.titulo.toLowerCase().includes(busquedaProducto.toLowerCase()));
     renderizarProductos(productosFiltrados);    
 }
 
