@@ -61,12 +61,29 @@ function renderizarProductos(array) {
 }
 
 //Filtrado de productos
-const textoIndicadorDeBusqueda = document.getElementById("search__indicator")
-barraDeBusqueda.addEventListener("input", filtrarProductos);
+const textoIndicadorDeBusqueda = document.getElementById("search__indicator");
+const rangoPrecio = document.getElementById("price__range");
+const textoRangoPrecio = document.getElementById("price__range__text");
 
-function filtrarProductos() {
+//Eventos
+barraDeBusqueda.addEventListener("input", filtrarProductos);
+rangoPrecio.addEventListener("input", filtrarProductos)
+
+function filtrarProductos() { // SEPARAR EN VARIAS FUNCIONES
     contenedorProductos.innerHTML = "";
-    const busquedaProducto = barraDeBusqueda.value.toLowerCase();
+    
+    //Filtro de precio
+    let valorRangoPrecio = rangoPrecio.value;
+    if (valorRangoPrecio > 0) {
+        valorRangoPrecio = valorRangoPrecio * 6;
+        textoRangoPrecio.innerText = `Less than $${valorRangoPrecio}`;
+    }
+    else {
+        textoRangoPrecio.innerText = "Any price";
+    }
+
+    //Busqueda directa
+    const busquedaProducto = barraDeBusqueda.value;
 
     if (busquedaProducto !== "") {
         textoIndicadorDeBusqueda.innerText = `Searching "${busquedaProducto}"`
@@ -75,11 +92,47 @@ function filtrarProductos() {
         textoIndicadorDeBusqueda .innerText = "All games";
     }
 
-    const productosFiltrados = productos.filter((el) => {
-        return el.titulo.toLowerCase().includes(busquedaProducto);
+    const productosFiltradosPrecio = productos.filter((el) => {
+        return el.precio <= valorRangoPrecio;
+    })
+
+    const productosFiltrados = productosFiltradosPrecio.filter((el) => {
+        return el.titulo.toLowerCase().includes(busquedaProducto.toLowerCase());
     })
 
     renderizarProductos(productosFiltrados);    
 }
 
 renderizarProductos(productos);
+
+// Carrito
+const carrito = [];
+const contenedorCarrito = document.getElementById("cart__sidebar__container");
+const scrollCuerpo = document.getElementById("body");
+const overlay = document.getElementById("cart__sidebar__overlay");
+
+// Eventos
+const botonMostrarCarrito = document.getElementById("show__cart__button");
+const botonCerrarCarrito = document.getElementById("close__cart__button");
+botonMostrarCarrito.addEventListener("click", () => verCarrito(1));
+botonCerrarCarrito.addEventListener("click", () => verCarrito(2));
+overlay.addEventListener("click", () => verCarrito(3));
+
+function verCarrito(action) {
+    let claseContenedorCarrito;
+    let claseScrollCuerpo;
+    let claseOverlay;
+    if (action === 1) {
+        claseContenedorCarrito = "shown";
+        claseScrollCuerpo = "noscroll";
+        claseOverlay = "overlay";
+    }
+    else {
+        claseContenedorCarrito = "closed";   
+        claseScrollCuerpo = "scroll";
+        claseOverlay = "no-overlay";
+    }
+    contenedorCarrito.className = claseContenedorCarrito;
+    scrollCuerpo.className = claseScrollCuerpo;
+    overlay.className = claseOverlay;
+}
