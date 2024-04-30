@@ -174,7 +174,7 @@ footer {
 }
 /* GLOBAL */
 
-/*INDEX.HTML */
+/* INDEX.HTML */
 /* PANTALLA DE BIENVENIDA */
 #first__view__container {
     display: grid;
@@ -274,7 +274,7 @@ footer {
 #games__filter__sidebar {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 60px repeat(3, 140px) 40px;
+    grid-template-rows: 60px repeat(2, 140px) 40px;
     justify-content: center;
     height: min-content;
 

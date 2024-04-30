@@ -38,6 +38,7 @@ const contenedorProductos = document.getElementById("cards__container");
 const barraDeBusqueda = document.getElementById("search__bar");
 
 function renderizarProductos(array) {
+    contenedorProductos.innerHTML = "";
     for (const producto of array) {
         const div = document.createElement("div");
         div.className = "card";
@@ -66,36 +67,57 @@ const rangoPrecio = document.getElementById("price__range");
 const textoRangoPrecio = document.getElementById("price__range__text");
 
 //Eventos
-barraDeBusqueda.addEventListener("input", filtrarProductos);
-rangoPrecio.addEventListener("input", filtrarProductos)
+barraDeBusqueda.addEventListener("input", filtrarProductosPorBusqueda);
+rangoPrecio.addEventListener("input", filtrarProductosPorPrecio)
 
-function filtrarProductos() {
+let productosFiltrados = productos;
+let productosFiltradosBusqueda;
+function filtrarProductosPorPrecio() {
     contenedorProductos.innerHTML = "";
-    
-    //Filtro de precio
+
+    let arrayUsado;
+    if (barraDeBusqueda.value !== "") {
+        arrayUsado = productosFiltradosBusqueda;
+    }
+    else {
+        arrayUsado = productos;
+    }
+
     let valorRangoPrecio = rangoPrecio.value;
     if (valorRangoPrecio > 0) {
         valorRangoPrecio = valorRangoPrecio * 6;
         textoRangoPrecio.innerText = `Less than $${valorRangoPrecio}`;
+        productosFiltrados = arrayUsado.filter((el) => el.precio <= valorRangoPrecio);
     }
     else {
         textoRangoPrecio.innerText = "Any price";
+        productosFiltrados = arrayUsado;
     }
+    renderizarProductos(productosFiltrados);
+}
 
-    const productosFiltradosPrecio = productos.filter((el) => el.precio <= valorRangoPrecio);
-
-    //Busqueda directa
+function filtrarProductosPorBusqueda() {
     const busquedaProducto = barraDeBusqueda.value;
 
     if (busquedaProducto !== "") {
-        textoIndicadorDeBusqueda.innerText = `Searching "${busquedaProducto}"`
+        productosFiltradosBusqueda = productosFiltrados.filter((el) => el.titulo.toLowerCase().includes(busquedaProducto.toLowerCase()));
+        if (productosFiltradosBusqueda.length > 0) {
+            if (productosFiltradosBusqueda.length > 1) {
+                textoIndicadorDeBusqueda.innerText = `${productosFiltradosBusqueda.length} results found`;
+            }
+            else {
+                textoIndicadorDeBusqueda.innerText = `1 result found`;
+            }
+        }
+        else {
+            textoIndicadorDeBusqueda.innerText = "No results found";
+        }
+        renderizarProductos(productosFiltradosBusqueda);
     }
     else {
-        textoIndicadorDeBusqueda .innerText = "All games";
+        textoIndicadorDeBusqueda.innerText = "All games";
+        filtrarProductosPorPrecio();
     }
-
-    const productosFiltrados = productosFiltradosPrecio.filter((el) => el.titulo.toLowerCase().includes(busquedaProducto.toLowerCase()));
-    renderizarProductos(productosFiltrados);    
 }
 
 renderizarProductos(productos);
@@ -113,6 +135,7 @@ botonMostrarCarrito.addEventListener("click", () => verCarrito(1));
 botonCerrarCarrito.addEventListener("click", () => verCarrito(2));
 overlay.addEventListener("click", () => verCarrito(3));
 
+//Funciones
 function verCarrito(action) {
     let claseContenedorCarrito;
     let claseScrollCuerpo;
