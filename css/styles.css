@@ -69,22 +69,20 @@ header {
 
 #cart__quantity__text {
     position: absolute;
-    right: 70px;
-}
-
-#cart__image {
-    width: 46px;
-    position: relative;
-    left: 4px;
-    bottom: 16px;
+    right: 71px;
+    bottom: 27px;
+    font-weight: 400;
+    user-select: none;
 }
 
 #show__cart__button {
-    width: min-content;
+    width: 46px;
     height: 46px;
+
     background-color: transparent;
     border: none;
     cursor: pointer;
+    z-index: 100;
 }
 
 /* CARRITO SIDEBAR */
@@ -103,11 +101,12 @@ header {
 }
 
 #cart__sidebar {
-    width: 23%;
+    display: flex;
+    flex-direction: column;
+    width: 450px;
     height: 100%;
     position: fixed;
-    right: 0;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(40, 40, 40, 0.95);
     border-left: solid 2px white;
     transition: transform .4s ease;
     z-index: 100;
@@ -131,10 +130,99 @@ header {
 }
 
 #close__cart__button {
-    width: min-content;
-    height: min-content;
-    background-color: transparent;
-    border: none;
+    width: 50px;
+    cursor: pointer;
+}
+
+#cart__sidebar__items__container {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    overflow-y: scroll;
+}
+
+#cart__item {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    margin: 8px 0;
+    background-color: black;
+    border-radius: 10px;
+}
+
+#cart__item:last-child {
+    margin-bottom: 75px;
+}
+
+#cart__item img {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+#cart__item__texts {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cart__item__text {
+    margin-left: 6px;
+    line-height: 150%;
+}
+
+#cart__img {
+    display: flex;
+    align-items: center;
+    width: 87px;
+    height: 100%;
+    background-color: white;
+    border-radius: 8px;
+}
+
+#cart__img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    cursor: auto;
+}
+
+#cart__img p {
+    color: black;
+    text-align: center;
+    user-select: none;
+}
+
+#cart__sidebar__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+    height: 70px;
+    padding: 0 16px;
+    background-color: black;
+    border-top: solid 2px white;
+}
+
+#cart__sidebar__footer h3 {
+    color: black;
+    background-color: white;
+    font-weight: 500;
+    font-size: 17px;
+    border: solid 2px white;
+    border-radius: 8px;
+    padding: 3px 5px 5px 5px;
+    transition: .2s;
+}
+
+#cart__sidebar__footer h3:hover {
+    color: white;
+    background-color: black;
     cursor: pointer;
 }
 
@@ -158,7 +246,6 @@ header {
 
 .no-overlay {
     opacity: 0;
-    background-color: rgba(0, 0, 0, 0.0);
 }
 /* CARRITO SIDEBAR */
 
@@ -274,7 +361,7 @@ footer {
 #games__filter__sidebar {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 60px repeat(2, 140px) 40px;
+    grid-template-rows: 60px repeat(2, 110px) 40px;
     justify-content: center;
     height: min-content;
 
@@ -304,21 +391,22 @@ footer {
     top: 2px;
 }
 
+/* PRODUCTOS */
 #games__container {
     display: grid;
     grid-template-rows: 25px 95%;
 }
 
-
 #search__indicator__container {
-    padding: 15px 38px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
 }
 
 #search__indicator {
     color: white;
 }
 
-/* CARTAS */
 #cards__container {
     display: flex;
     justify-content: space-evenly;
@@ -335,10 +423,30 @@ footer {
 
     outline: solid 2px white;
     border-radius: 10px;
-    background: linear-gradient(.3turn, #8100eb, #5d00aa);
+    background: linear-gradient(.7turn, #6600b9, #260045);
     color: white;
     line-height: 175%;
     text-decoration: none;
+}
+
+#img__replace {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 40%;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#img__replace__text {
+    text-align: center;
+    user-select: none;
+}
+
+.card img {
+    width: 50%;
+    border-radius: 10px;
 }
 
 .card__button {
@@ -359,9 +467,8 @@ footer {
 .card__button img {
     width: 30px;
 }
+/* PRODUCTOS */
 /* INDEX.HTML*/
-
-/* CONTACT.HTML */
 
 /* CONTACT.HTML */
 #contact__form__container {
