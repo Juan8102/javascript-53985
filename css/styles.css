@@ -8,6 +8,15 @@
     font-weight: 100;
 }
 
+::-webkit-scrollbar {
+    background-color: #121212;
+    border-left: solid 2px white;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);
+}
+
 body {
     color: white;
     background-color: #090909;
@@ -69,9 +78,9 @@ header {
 
 #cart__quantity__text {
     position: absolute;
-    right: 71px;
-    bottom: 27px;
-    font-weight: 400;
+    right: 68px;
+    bottom: 25px;
+    font-weight: 600;
     user-select: none;
 }
 
@@ -137,6 +146,7 @@ header {
 #cart__sidebar__items__container {
     display: flex;
     flex-direction: column;
+    height: 100%;
     padding: 12px;
     overflow-y: scroll;
 }
@@ -147,7 +157,8 @@ header {
     height: 100px;
     padding: 8px;
     margin: 8px 0;
-    background-color: black;
+    background: linear-gradient(.2turn, #151515, #303030);
+    outline: solid 2px white;
     border-radius: 10px;
 }
 
@@ -169,11 +180,25 @@ header {
 }
 
 .cart__item__text {
-    margin-left: 6px;
+    margin-left: 12px;
     line-height: 150%;
 }
 
-#cart__img {
+#cart__img__container {
+    display: flex;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+}
+
+#cart__img__container img {
+    width: 100%;
+    height: 100%;
+    cursor: auto;
+    object-fit: contain;
+}
+
+#cart__img__replace__container {
     display: flex;
     align-items: center;
     width: 87px;
@@ -182,14 +207,7 @@ header {
     border-radius: 8px;
 }
 
-#cart__img img {
-    width: 100%;
-    height: 100%;
-    border-radius: 7px;
-    cursor: auto;
-}
-
-#cart__img p {
+#cart__img__replace__container p {
     color: black;
     text-align: center;
     user-select: none;
@@ -320,18 +338,29 @@ footer {
 }
 
 /* SIDEBAR DE FILTROS Y BUSQUEDA */
-#search__bar__form {
-    display: flex;
+#games__filter__sidebar__container {
+    height: 100%;
+    padding: 20px;
+    background-color: #161616;
+    border-right: solid 2px white;
+}
+
+#games__filter__sidebar {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 305px 110px 190px;
     justify-content: center;
-    align-items: center;
+    height: min-content;
+
+    position: sticky;
+    top: 90px;
 }
 
 #search__bar {
     width: 100%;
     height: 40px;
 
-    margin-bottom: 20px;
-    padding: 10px;
+    padding: 8px 10px;
 
     background-color: transparent;
     color: white;
@@ -351,28 +380,64 @@ footer {
     color: #d4d4d4;
 }
 
-#games__filter__sidebar__container {
-    height: 100%;
-    padding: 20px;
-    background-color: #161616;
-    border-right: solid 2px white;
+#search__bar__games {
+    width: 100%;
+    height: min-content;
+    max-height: 260px;
+    outline: solid 2px white;
+    background-color: #101010;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-#games__filter__sidebar {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 60px repeat(2, 110px) 40px;
-    justify-content: center;
-    height: min-content;
+.search__bar__games__item {
+    display: flex;
+    padding: 8px 8px;
+    border-bottom: solid 1px white;
+    background-color: #080808;
+}
 
-    position: sticky;
-    top: 90px;
+.search__bar__games__item img {
+    width: 65px;
+    margin-right: 6px;
+    border-radius: 5px;
+}
+
+#search__add__to__cart__button {
+    align-self: last baseline;
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.search__bar__games__item__texts {
+    line-height: 155%;
+    text-wrap: nowrap;
 }
 
 .games__filter__sidebar__items {
     width: 100%;
     padding: 8px 4px;
     border-bottom: solid 1px white;
+}
+
+#games__filter__categories {
+    display: grid;
+    grid-template-columns: repeat(3, 25%);
+    grid-template-rows: repeat(7, 14.3%);
+    justify-content: space-between;
+    align-items: center;
+}
+
+#games__filter__categories label {
+    display: flex;
+    font-size: 14px;
+    text-wrap: nowrap;
+}
+
+#games__filter__categories label input {
+    margin-right: 2px;
 }
 
 .games__filter__sidebar__items:last-child {
@@ -416,6 +481,10 @@ footer {
 }
 
 .card {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 45% 53%;
+    grid-gap: 2%;
     width: 230px;
     height: 280px;
     margin: 20px 20px;
@@ -423,7 +492,7 @@ footer {
 
     outline: solid 2px white;
     border-radius: 10px;
-    background: linear-gradient(.7turn, #6600b9, #260045);
+    background: linear-gradient(.37turn, #121212, #303030);
     color: white;
     line-height: 175%;
     text-decoration: none;
@@ -433,9 +502,8 @@ footer {
     display: flex;
     align-items: center;
     width: 50%;
-    height: 40%;
+    height: 85%;
     margin-bottom: 6px;
-    border-radius: 10px;
     background-color: black;
 }
 
@@ -444,29 +512,47 @@ footer {
     user-select: none;
 }
 
-.card img {
-    width: 50%;
-    border-radius: 10px;
+#product__image__container {
+    width: 100%;
+    height: 100%;
+}
+
+#card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left;
+}
+
+#card__overlay__container {
+    display: flex;
+    align-items: center;
 }
 
 .card__button {
+    width: min-content;
     margin: 4px 0;
     padding: 5px 6px;
 
     border-radius: 10px;
     border: none;
     cursor: pointer;
-
-    transition: .2s;
-}
-
-.card__button:hover {
-    padding: 6.5px 7.5px;
 }
 
 .card__button img {
     width: 30px;
 }
+
+.show__card__overlay__text {
+    display: inline-block;
+    line-height: 120%;
+    padding-left: 8px;
+}
+
+.closed__card__overlay__text {
+    display: none;
+}
+
 /* PRODUCTOS */
 /* INDEX.HTML*/
 

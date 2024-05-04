@@ -33,7 +33,7 @@
                 </ul>
                 <div id="cart__image__container">
                     <p id="cart__quantity__text">0</p>
-                    <img src="media/shopping-cart.png" id="show__cart__button" alt="Shopping cart icon" />
+                    <img src="media/white-shopping-cart.png" id="show__cart__button" alt="Shopping cart icon" />
                 </div>
             </div>
         </header>
@@ -46,21 +46,24 @@
                 <div id="games__indicator__container">
                     <div id="header__games__location"></div>
                     <p id="games__indicator__text">Start exploring</p>
-                    <img src="media/flecha-hacia-abajo.png" alt="An icon of a cross">
+                    <img src="media/arrow_down.png" alt="An icon of a cross">
                 </div>
            </div>
            <div id="main__content__container">
                 <div id="games__filter__sidebar__container">
                     <div id="games__filter__sidebar">
-                        <form id="search__bar__form">
-                            <input type="text" name="search-bar" placeholder="Search games here" title="" id="search__bar" required>
-                        </form>
+                        <div id="search__bar__container">
+                            <input type="text" name="search-bar" placeholder="Search games here" autocomplete="off" id="search__bar" required>
+                            <div id="search__bar__games">
+                                
+                            </div>
+                        </div>
                         <div class="games__filter__sidebar__items">
                             <h2>Price range</h2>
                             <p id="price__range__text">Any price</p>
                             <input type="range" value="0" min="0" max="10" id="price__range">
                         </div>
-                        <div class="games__filter__sidebar__items">
+                        <div class="games__filter__sidebar__items" id="games__filter__categories">
                             
                         </div>
                         <div class="games__filter__sidebar__items">
