@@ -27,7 +27,7 @@
             <div id="header__container">
                 <ul id="header__links__list">
                     <li class="header__link"><a class="header__link__item">Home</a></li>
-                    <li class="header__link"><a href="#header__games__location" class="header__link__item">Games</a></li>
+                    <li class="header__link"><a href="#games__location" class="header__link__item">Games</a></li>
                     <li class="header__link"><a href="pages/contact.html" class="header__link__item">Contact</a></li>
                     <li class="header__link"><a href="#!" class="header__link__item">Submit your game (WIP)</a></li>
                 </ul>
@@ -44,9 +44,9 @@
                     <h3 class="welcome__texts">#1 Game Shop</h3>
                 </div>
                 <div id="games__indicator__container">
-                    <div id="header__games__location"></div>
+                    <div id="games__location"></div>
                     <p id="games__indicator__text">Start exploring</p>
-                    <img src="media/arrow_down.png" alt="An icon of a cross">
+                    <img src="media/purple_arrow.png" alt="An icon of a cross">
                 </div>
            </div>
            <div id="main__content__container">
@@ -66,21 +66,23 @@
                         <div class="games__filter__sidebar__items" id="games__filter__categories">
                             
                         </div>
-                        <div class="games__filter__sidebar__items">
-                            <label>
-                                <input type="checkbox" name="Ignore Filters" id="ignore__filters">
-                                Ignore filters
-                            </label>
-                        </div>
                     </div>
                 </div>
                 <div id="games__container">
                     <div id="search__indicator__container">
                         <h3 id="search__indicator">All games</h3>
-                        <!-- <h4 id="search__indicator">Showing 30 games per page</h4> -->
                     </div>
                     <div id="cards__container">
                         
+                    </div>
+                    <div id="cards__end">
+                        <a href="#games__location">
+                            <img id="cards__footer__previous-page" src="media/white_arrow.png" href="#games__location">
+                        </a>
+                        <p id="cards__footer__text">0</p>
+                        <a href="#games__location">
+                            <img id="cards__footer__next-page" src="media/white_arrow.png">
+                        </a>
                     </div>
                 </div>
            </div>

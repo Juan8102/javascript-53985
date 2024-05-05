@@ -31,6 +31,7 @@ header {
 
     border-bottom: solid 2px white;
     background: linear-gradient(.51turn, #8100eb, #5d00aa);
+    z-index: 900;
 }
 
 #header__container {
@@ -118,7 +119,7 @@ header {
     background-color: rgba(40, 40, 40, 0.95);
     border-left: solid 2px white;
     transition: transform .4s ease;
-    z-index: 100;
+    z-index: 1000;
 }
 
 #cart__sidebar__header {
@@ -323,14 +324,14 @@ footer {
     width: 20px;
 }
 
-#header__games__location {
-    margin-bottom: 8px;
+#games__location {
+    margin-bottom: 16px;
 }
 
 /* CONTENIDO PRINCIPAL */
 #main__content__container {
     display: grid;
-    grid-template-columns: 22.5% 77.25%;
+    grid-template-columns: 22.5% 77.5%;
     min-height: 700px;
 
     background-color: #090909;
@@ -428,6 +429,7 @@ footer {
     grid-template-rows: repeat(7, 14.3%);
     justify-content: space-between;
     align-items: center;
+    border: none;
 }
 
 #games__filter__categories label {
@@ -440,26 +442,14 @@ footer {
     margin-right: 2px;
 }
 
-.games__filter__sidebar__items:last-child {
-    display: flex;
-    align-items: center;
-    padding: 22.5px 10px;
-    border: none;
-}
-
 #price__range__text {
     padding-top: 10px;
-}
-
-#ignore__filters {
-    position: relative;
-    top: 2px;
 }
 
 /* PRODUCTOS */
 #games__container {
     display: grid;
-    grid-template-rows: 25px 95%;
+    grid-template-rows: 25px auto 50px;
 }
 
 #search__indicator__container {
@@ -551,6 +541,45 @@ footer {
 
 .closed__card__overlay__text {
     display: none;
+}
+
+#cards__end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #161616;
+    user-select: none;
+}
+
+#cards__end a {
+    width: min-content;
+    height: min-content;
+}
+
+#cards__end a {
+    display: flex;
+    width: 16px;
+}
+
+#cards__end img {
+    width: 100%;
+    height: 100%;
+}
+
+#cards__footer__previous-page {
+    rotate: 90deg;
+}
+
+#cards__footer__next-page {
+    rotate: -90deg;
+}
+
+#cards__end p {
+    margin: 0 8px;
+    position: relative;
+    bottom: 1.8px;
 }
 
 /* PRODUCTOS */

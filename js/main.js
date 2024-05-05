@@ -6,7 +6,7 @@ const productos = [
     {image: "",                         titulo: "Resident Evil 7",        categoria1: "Terror",           categoria2: "Acción",                 precio: 19.99, stock: 22},
     {image: "",                         titulo: "Back 4 Blood",           categoria1: "Zombis",           categoria2: "FPS",                    precio: 29.99, stock: 14},
     {image: "media/products/rdr2.png",  titulo: "Red Dead Redemption 2",  categoria1: "Buena trama",      categoria2: "Mundo abierto",          precio: 69.99, stock: 28},
-    {image: "",                         titulo: "Baldur's Gate 3",        categoria1: "Rol",              categoria2: "Decisiones", precio: 34.99, stock: 20},
+    {image: "",                         titulo: "Baldur's Gate 3",        categoria1: "Rol",              categoria2: "Decisiones",             precio: 34.99, stock: 20},
     {image: "",                         titulo: "Far Cry 5",              categoria1: "Mundo abierto",    categoria2: "FPS",                    precio: 47.99, stock: 23},
     {image: "",                         titulo: "Resident Evil 2",        categoria1: "Terror",           categoria2: "Acción",                 precio: 29.99, stock: 32},
     {image: "",                         titulo: "The Mortuary Assistant", categoria1: "Terror",           categoria2: "Misterio",               precio: 12.49, stock: 16},
@@ -22,7 +22,7 @@ const productos = [
     {image: "",                         titulo: "Buckshot Roulette",      categoria1: "Suspenso",         categoria2: "Estrategia",             precio: 1.49,  stock: 12},
     {image: "",                         titulo: "Sons Of The Forest",     categoria1: "Terror",           categoria2: "Supervivencia",          precio: 14.99, stock: 18},
     {image: "",                         titulo: "Far Cry 6",              categoria1: "Mundo abierto",    categoria2: "FPS",                    precio: 47.99, stock: 37},
-    {image: "",                         titulo: "Detroit: Become Human",  categoria1: "Futurista",        categoria2: "Decisiones", precio: 31.99, stock: 44},
+    {image: "",                         titulo: "Detroit: Become Human",  categoria1: "Futurista",        categoria2: "Decisiones",             precio: 31.99, stock: 44},
     {image: "",                         titulo: "Resident Evil 4",        categoria1: "Terror",           categoria2: "Acción",                 precio: 29.99, stock: 26},
     {image: "",                         titulo: "DOOM Eternal",           categoria1: "FPS",              categoria2: "Acción",                 precio: 23.99, stock: 11},
     {image: "",                         titulo: "Project Zomboid",        categoria1: "Zombis",           categoria2: "Mundo abierto",          precio: 10.49, stock: 28},
@@ -30,16 +30,15 @@ const productos = [
     {image: "",                         titulo: "Shadows of Doubt",       categoria1: "Buena trama",      categoria2: "Cyberpunk",              precio: 9.99,  stock: 31},
     {image: "",                         titulo: "It Takes Two",           categoria1: "Cooperativo",      categoria2: "Buena trama",            precio: 39.99, stock: 18},
     {image: "",                         titulo: "Resident Evil 3",        categoria1: "Terror",           categoria2: "Acción",                 precio: 29.99, stock: 21},
-    {image: "",                         titulo: "Balatro",                categoria1: "Cartas", categoria2: "Estrategia",             precio: 5.99,  stock: 29},
+    {image: "",                         titulo: "Balatro",                categoria1: "Cartas",           categoria2: "Estrategia",             precio: 5.99,  stock: 29},
 ];
 
 //Renderización de productos
 const contenedorProductos = document.getElementById("cards__container");
 
-let inicioLimiteRenderizacion = 0;
-let finLimiteRenderizacion = 30;
 function renderizarProductos(array) {
     contenedorProductos.innerHTML = "";
+
     for (const producto of array) {
         const div = document.createElement("div");
         div.className = "card";
@@ -103,8 +102,30 @@ function renderizarProductos(array) {
         contenedorProductos.append(div);
     }
 }
-
 renderizarProductos(productos);
+
+//Filtros
+const textoRangoPrecio = document.getElementById("price__range__text");
+const sliderRangoPrecio = document.getElementById("price__range");
+sliderRangoPrecio.addEventListener("input", filtrarPorPrecio)
+
+let productosFiltradosPorPrecio = [];
+function filtrarPorPrecio() {
+    productosFiltradosPorPrecio = [];
+    const rangoPrecio = sliderRangoPrecio.value * 6;
+    if (rangoPrecio !== 0) {
+        textoRangoPrecio.innerText = `Less than $${rangoPrecio}`;
+        productosFiltradosPorPrecio = productos.filter((el) => el.precio <= rangoPrecio);
+        renderizarProductos(productosFiltradosPorPrecio);
+    }
+    else {
+        textoRangoPrecio.innerText = "Any price";
+        renderizarProductos(productos);
+    }
+}
+
+//Cambio de páginas
+
 
 // Sistema de carrito
 let carrito = [];
@@ -293,22 +314,5 @@ function busquedaProductos() {
             div.append(textsDiv, imgButton);           
             contenedorProductosBusqueda.append(div);
         }
-    }
-}
-
-//Filtros
-const textoRangoPrecio = document.getElementById("price__range__text");
-const sliderRangoPrecio = document.getElementById("price__range");
-sliderRangoPrecio.addEventListener("input", filtrarPorPrecio)
-function filtrarPorPrecio() {
-    const rangoPrecio = sliderRangoPrecio.value * 6;
-    if (rangoPrecio !== 0) {
-        textoRangoPrecio.innerText = `Less than $${rangoPrecio}`;
-        const productosFiltradosPorPrecio = productos.filter((el) => el.precio <= rangoPrecio);
-        renderizarProductos(productosFiltradosPorPrecio);
-    }
-    else {
-        textoRangoPrecio.innerText = "Any price";
-        renderizarProductos(productos);
     }
 }
