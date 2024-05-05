@@ -35,12 +35,18 @@ const productos = [
     {image: "",                         titulo: "Resident Evil 3",        categoria1: "Terror",           categoria2: "Acción",                 precio: 29.99, stock: 21},
     {image: "",                         titulo: "Balatro",                categoria1: "Cartas",           categoria2: "Estrategia",             precio: 5.99,  stock: 29},
 ];
+let arrayActual = productos;
 
 //Renderización de productos
 const contenedorProductos = document.getElementById("cards__container");
 
+let inicioRenderizacion = 0;
+let finRendericacion = 20;
 function renderizarProductos(array) {
     contenedorProductos.innerHTML = "";
+
+    array = array.slice(inicioRenderizacion, finRendericacion);
+
     for (const producto of array) {
         //Contenedor de toda la información del producto
         const div = document.createElement("div");
@@ -110,30 +116,86 @@ function renderizarProductos(array) {
         contenedorProductos.append(div);
     }
 }
-renderizarProductos(productos);
+renderizarProductos(arrayActual);
+
+//Gestión de páginas
+let numeroPaginas = 0;
+const textoPaginas = document.getElementById("cards__footer__text");
+const paginaAnterior = document.getElementById("cards__footer__previous-page__link");
+const siguientePagina = document.getElementById("cards__footer__next-page__link");
+paginaAnterior.addEventListener("click", () => gestionPaginas(1));
+siguientePagina.addEventListener("click", () => gestionPaginas(2))
+
+function gestionPaginas(action) {
+    if (action === 1) {
+        if (inicioRenderizacion !== 0) {
+            numeroPaginas--;
+            textoPaginas.innerText = `${numeroPaginas}`;
+
+            inicioRenderizacion = inicioRenderizacion - 20;
+            finRendericacion = finRendericacion - 20;
+
+            verificarPagina(1);
+        }
+    }
+    else {
+        if (finRendericacion < arrayActual.length) {
+            numeroPaginas++;
+            textoPaginas.innerText = `${numeroPaginas}`;
+
+            inicioRenderizacion = inicioRenderizacion + 20;
+            finRendericacion = finRendericacion + 20;
+
+            verificarPagina(1);
+        }
+    }
+}
+
+function verificarPagina(action) {
+    if (action === 3) {
+        inicioRenderizacion = 0;
+        finRendericacion = 20;
+        
+        numeroPaginas = 0;
+        textoPaginas.innerText = numeroPaginas;
+        renderizarProductos(arrayActual);
+    }
+    if (inicioRenderizacion === 0) {
+        paginaAnterior.style.display = "none";
+    }
+    else {
+        paginaAnterior.style.display = "block";
+    }
+    if (finRendericacion > arrayActual.length) {
+        siguientePagina.style.display = "none";
+    }
+    else {
+        siguientePagina.style.display = "block";
+    }
+    if (action === 1) {
+        renderizarProductos(arrayActual);
+    }
+}
+verificarPagina(2);
 
 //Filtros
 const textoRangoPrecio = document.getElementById("price__range__text");
 const sliderRangoPrecio = document.getElementById("price__range");
 sliderRangoPrecio.addEventListener("input", filtrarPorPrecio)
 
-let productosFiltradosPorPrecio = [];
 function filtrarPorPrecio() {
-    productosFiltradosPorPrecio = [];
     const rangoPrecio = sliderRangoPrecio.value * 6;
     if (rangoPrecio !== 0) { //Si el filtro de precio es aplicado, se realizarán el filtrado correspondiente
         textoRangoPrecio.innerText = `Less than $${rangoPrecio}`;
-        productosFiltradosPorPrecio = productos.filter((el) => el.precio <= rangoPrecio);
-        renderizarProductos(productosFiltradosPorPrecio);
+        arrayActual = productos.filter((el) => el.precio <= rangoPrecio);
+        verificarPagina(3);
     }
     else { //Si el filtro de precio no es aplicado, se mostrarán todos los productos
         textoRangoPrecio.innerText = "Any price";
-        renderizarProductos(productos);
+        arrayActual = productos;
+        verificarPagina(3);
     }
 }
-
-//Cambio de páginas
-
 
 // Sistema de carrito
 let carrito = [];
@@ -292,14 +354,16 @@ function eliminarDelCarrito(producto) {
 }
 
 function vaciarCarrito() {
-    carrito.splice(0, carrito.length);
+    if (carrito.length > 0) {
+        carrito.splice(0, carrito.length);
 
-    const carritoJSON = JSON.stringify(carrito);
-    localStorage.carrito = carritoJSON;
-    indicadorCantidadJuegos.innerText = `${carrito.length}`;
+        const carritoJSON = JSON.stringify(carrito);
+        localStorage.carrito = carritoJSON;
+        indicadorCantidadJuegos.innerText = `${carrito.length}`;
 
-    botonPago.setAttribute("href", "#!"); //Se quita el acceso a la página de pago
-    renderizarCarrito();
+        botonPago.setAttribute("href", "#!"); //Se quita el acceso a la página de pago
+        renderizarCarrito();
+    }
 }
 
 //Busqueda de productos
