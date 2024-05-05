@@ -41,16 +41,17 @@ const contenedorProductos = document.getElementById("cards__container");
 
 function renderizarProductos(array) {
     contenedorProductos.innerHTML = "";
-
     for (const producto of array) {
+        //Contenedor de toda la información del producto
         const div = document.createElement("div");
         div.className = "card";
 
+        //Imágen y texto sustituto
         const imgDiv = document.createElement("div");
         imgDiv.id = "product__image__container";
 
         let image;
-        if (producto.image !== "") {
+        if (producto.image !== "") { //Si el producto no tiene una imágen asignada, se sustituirá por un texto
             const img = document.createElement("img");
             img.setAttribute("src", `${producto.image}`);
             img.id = "card__img";
@@ -69,6 +70,7 @@ function renderizarProductos(array) {
         }
         imgDiv.append(image);
 
+        //Textos
         const textsDiv = document.createElement("div");
 
         const h3 = document.createElement("h3");
@@ -80,6 +82,7 @@ function renderizarProductos(array) {
         const p = document.createElement("p");
         p.innerText = `Stock: ${producto.stock}`;
 
+        //Botón
         const buttonDiv = document.createElement("div");
         buttonDiv.id = "card__overlay__container";
 
@@ -94,9 +97,11 @@ function renderizarProductos(array) {
             agregarAlCarrito(producto);
         })
 
+        //Texto mostrado al usuario
         const overlayText = document.createElement("p");
         overlayText.id = `card__overlay__text${array.indexOf(producto)}`;
         overlayText.className = "closed__card__overlay__text";
+
         buttonDiv.append(button, overlayText);
 
         textsDiv.append(h3, h4, p, buttonDiv);
@@ -116,12 +121,12 @@ let productosFiltradosPorPrecio = [];
 function filtrarPorPrecio() {
     productosFiltradosPorPrecio = [];
     const rangoPrecio = sliderRangoPrecio.value * 6;
-    if (rangoPrecio !== 0) {
+    if (rangoPrecio !== 0) { //Si el filtro de precio es aplicado, se realizarán el filtrado correspondiente
         textoRangoPrecio.innerText = `Less than $${rangoPrecio}`;
         productosFiltradosPorPrecio = productos.filter((el) => el.precio <= rangoPrecio);
         renderizarProductos(productosFiltradosPorPrecio);
     }
-    else {
+    else { //Si el filtro de precio no es aplicado, se mostrarán todos los productos
         textoRangoPrecio.innerText = "Any price";
         renderizarProductos(productos);
     }
@@ -133,18 +138,27 @@ function filtrarPorPrecio() {
 // Sistema de carrito
 let carrito = [];
 const indicadorCantidadJuegos = document.getElementById("cart__quantity__text");
-if (localStorage.carrito !== undefined) {
+const botonPago = document.getElementById("cart__payment__link");
+
+if (localStorage.carrito !== undefined) { //Si la llave "carrito" existe
     let carritoLS = JSON.parse(localStorage.carrito);
     carrito = carritoLS;
     indicadorCantidadJuegos.innerText = `${carrito.length}`;
+
+    if (carrito.length > 0) { //Si hay al menos un producto en el carrito, se habilitará el acceso a la página de pago
+        botonPago.setAttribute("href", "pages/payment.html")
+    }
 }
 
-//Variables
+//Contenedores
 const contenedorCarrito = document.getElementById("cart__sidebar__container");
 const contenedorItemsCarrito = document.getElementById("cart__sidebar__items__container");
 
+//Elementos destinados a la estética de la página
 const scrollCuerpo = document.getElementById("body");
 const overlay = document.getElementById("cart__sidebar__overlay");
+
+//Botones del carrito
 const botonMostrarCarrito = document.getElementById("show__cart__button");
 const botonCerrarCarrito = document.getElementById("close__cart__button");
 const botonVaciarCarrito = document.getElementById("empty__cart__button");
@@ -155,16 +169,17 @@ botonMostrarCarrito.addEventListener("click", () => verCarrito(1));
 botonCerrarCarrito.addEventListener("click", () => verCarrito(2));
 overlay.addEventListener("click", () => verCarrito(3));
 
+//Esta es una función que únicamente maneja la estética del carrito
 function verCarrito(action) {
     let claseContenedorCarrito;
     let claseScrollCuerpo;
     let claseOverlay;
-    if (action === 1) {
+    if (action === 1) { //Si se apretó el botón de mostrar el carrito
         claseContenedorCarrito = "shown";
         claseScrollCuerpo = "noscroll";
         claseOverlay = "overlay";
     }
-    else {
+    else { //Si se apretó el botón de cerrar el carrito o se hizo click fuera del carrito
         claseContenedorCarrito = "closed";   
         claseScrollCuerpo = "scroll";
         claseOverlay = "no-overlay";
@@ -172,38 +187,43 @@ function verCarrito(action) {
     contenedorCarrito.className = claseContenedorCarrito;
     scrollCuerpo.className = claseScrollCuerpo;
     overlay.className = claseOverlay;
+
     renderizarCarrito();
 }
 
-function renderizarCarrito(action) {
+function renderizarCarrito() {
+    contenedorItemsCarrito.innerHTML = "";
     for (const producto of carrito) {
+        //Contenedor de toda la información del producto
         const div = document.createElement("div");
-        div.id = "cart__item";
+        div.className = "cart__item";
 
+        //Imágen y texto sustituto
         const imgDiv = document.createElement("div");
 
         let image;
-        if (producto.image !== "") {
+        if (producto.image !== "") { //Si el producto no tiene una imágen asignada, se sustituirá por un texto
             const img = document.createElement("img");
             img.setAttribute("src", `${producto.image}`);
-            imgDiv.id = "cart__img__container";
+            imgDiv.className = "cart__img__container";
 
             imgDiv.append(img);
             image = imgDiv;
         }
         else {
             const p = document.createElement("p");
-            p.id = "cart__img__replace__text";
+            p.className = "cart__img__replace__text";
             p.innerText = "Image not found"
-            imgDiv.id = "cart__img__replace__container";
+            imgDiv.className = "cart__img__replace__container";
             
             imgDiv.append(p);
 
             image = imgDiv;
         }
 
+        //Textos
         const itemsDiv = document.createElement("div");
-        itemsDiv.id = "cart__item__texts";
+        itemsDiv.className = "cart__item__text__container";
 
         const h3 = document.createElement("h3");
         h3.innerText = producto.titulo;
@@ -215,8 +235,9 @@ function renderizarCarrito(action) {
 
         itemsDiv.append(h3, h4);
 
+        //Botón
         const imgButton = document.createElement("img");
-        imgButton.id = "cart__delete__item__button";
+        imgButton.className = "cart__delete__item__button";
         imgButton.setAttribute("src", "media/trash_can.png");
         imgButton.addEventListener("click", () => {
             eliminarDelCarrito(producto);
@@ -230,40 +251,54 @@ function renderizarCarrito(action) {
 
 function agregarAlCarrito(producto) {
     const todosLosOverlays = document.getElementsByClassName("show__card__overlay__text");
-    for(const texto of todosLosOverlays) {
+    for(const texto of todosLosOverlays) { //Se borran todos los textos temporales para dejar solo el último
         texto.className = "closed__card__overlay__text";
     }
 
     const cardOverlayText = document.getElementById(`card__overlay__text${productos.indexOf(producto)}`);
     const buscarProductoCarrito = carrito.find((el) => el.titulo.toLowerCase() === producto.titulo.toLowerCase());
-    if (buscarProductoCarrito !== undefined) {
+    if (buscarProductoCarrito !== undefined) { //Si el producto que se quiere agregar al carrito, ya está en él
         cardOverlayText.innerText = "You already have this product in your cart.";
         cardOverlayText.className = "show__card__overlay__text";
     }
-    else {
+    else { //Si el producto que se quiere agregar al carrito, NO está en él
         carrito.push(producto);
+
         const carritoJson = JSON.stringify(carrito);
         localStorage.setItem("carrito", carritoJson);
+
         indicadorCantidadJuegos.innerText = `${carrito.length}`;
+
         cardOverlayText.innerText = `Product added to your cart.`;
         cardOverlayText.className = "show__card__overlay__text";
+
+        botonPago.setAttribute("href", "pages/payment.html");
     }
 }
 
 function eliminarDelCarrito(producto) {
     const indexProducto = carrito.indexOf(producto);
     carrito.splice(indexProducto, 1);
+
     const carritoJSON = JSON.stringify(carrito);
     localStorage.carrito = carritoJSON;
     indicadorCantidadJuegos.innerText = `${carrito.length}`;
+    
+    if (carrito.length === 0) { //Si después de eliminar el producto del carrito, este queda vacío, se quitará el acceso a la página de pago
+        botonPago.setAttribute("href", "#!");
+    }
+    
     renderizarCarrito();
 }
 
 function vaciarCarrito() {
     carrito.splice(0, carrito.length);
+
     const carritoJSON = JSON.stringify(carrito);
     localStorage.carrito = carritoJSON;
     indicadorCantidadJuegos.innerText = `${carrito.length}`;
+
+    botonPago.setAttribute("href", "#!"); //Se quita el acceso a la página de pago
     renderizarCarrito();
 }
 
@@ -277,16 +312,18 @@ function busquedaProductos() {
     if (barraDeBusqueda.value.length > 0) {
         const productosEncontrados = productos.filter((el) => el.titulo.toLowerCase().includes(barraDeBusqueda.value.toLowerCase()));
         for (const producto of productosEncontrados) {
+            //Contenedor de toda la información de los productos buscados
             const div = document.createElement("div");
             div.className = "search__bar__games__item";
 
+            //Contenedor de los textos
             const textsDiv = document.createElement("div");
 
             const h4 = document.createElement("h4");
             h4.innerText = `${producto.titulo}`;
 
             const indexProducto = carrito.indexOf(producto);
-            if (carrito[indexProducto] === producto) {
+            if (carrito[indexProducto] === producto) { //Si algunop de los productos buscados ya está en el carrito
                 h4.innerText += " (in your cart)";
             }
 
@@ -302,6 +339,7 @@ function busquedaProductos() {
 
             textsDiv.append(h4, h5, h52);
 
+            //Botón
             const imgButton = document.createElement("img");
             imgButton.id = "search__add__to__cart__button";
             imgButton.setAttribute("src", "media/white-add-to-cart.png");
