@@ -34,9 +34,26 @@ header {
     z-index: 900;
 }
 
+#account__manager {
+    width: 46px;
+    height: 46px;
+    margin-left: 40%;
+    outline: solid 2px black;
+    outline-offset: -1px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+#account__manager img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+}
+
 #header__container {
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 4% 66% 30%;
     justify-content: center;
     align-items: center;
 
@@ -118,7 +135,7 @@ header {
     position: fixed;
     background-color: rgba(40, 40, 40, 0.95);
     border-left: solid 2px white;
-    transition: transform .4s ease;
+    transition: transform .5s ease;
     z-index: 1000;
 }
 
@@ -126,7 +143,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 78px;
 
     padding: 0 15px;
     background-color: black;
@@ -149,13 +166,13 @@ header {
     flex-direction: column;
     height: 100%;
     padding: 12px;
-    overflow-y: scroll;
+    overflow: scroll;
 }
 
 #cart__item {
     display: flex;
     width: 100%;
-    height: 100px;
+    height: 90px;
     padding: 8px;
     margin: 8px 0;
     background: linear-gradient(.2turn, #151515, #303030);
@@ -243,6 +260,10 @@ header {
     color: white;
     background-color: black;
     cursor: pointer;
+}
+
+#cart__sidebar__footer a {
+    text-decoration: none;
 }
 
 .noscroll {
@@ -656,3 +677,53 @@ footer {
     transition: all .2s;
     cursor: pointer;
 }
+/* CONTACT.HTML */
+
+/* PAYMENT.HTML */
+#payment__card__container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 553px;
+    padding: 40px;
+}
+
+#payment__card {
+    width: 40%;
+    height: 100%;
+    border: solid 2px white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#payment__card__header,
+#payment__card__footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    background: linear-gradient(.51turn, #8100eb, #5d00aa);
+    border-bottom: solid 1px white;
+}
+
+#payment__card__footer {
+    height: 50px;
+    border-top: solid 1px white;
+}
+
+#payment__products__container {
+    height: 77%;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.payment__products {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(.2turn, #151515, #303030);
+    outline: solid 2px white;
+    border-radius: 10px;
+}
+
+/* PAYMENT.HTML */

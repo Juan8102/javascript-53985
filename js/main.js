@@ -1,3 +1,6 @@
+/* const categorias = ["Espacio", "Mundo abierto", "Terror", "Zombis", "Buena trama", "Rol", "Fantasía", "Futurista", "Suspenso", "Cooperativo", "Cartas",
+                    "Misterio", "Decisiones", "FPS", "Exploración", "Estrategia", "Supervivencia", "Cyberpunk", "Viejo oeste", "Plataformas"] */
+
 const productos = [
     {image: "media/products/astro.jpg", titulo: "Astroneer",              categoria1: "Espacio",          categoria2: "Mundo abierto",          precio: 5.99,  stock: 20},
     {image: "media/products/f4.png",    titulo: "Fallout 4",              categoria1: "Mundo abierto",    categoria2: "Supervivencia",          precio: 11.99, stock: 17},
@@ -172,30 +175,7 @@ function verCarrito(action) {
     renderizarCarrito();
 }
 
-function agregarAlCarrito(producto) {
-    const todosLosOverlays = document.getElementsByClassName("show__card__overlay__text");
-    for(const texto of todosLosOverlays) {
-        texto.className = "closed__card__overlay__text";
-    }
-
-    const cardOverlayText = document.getElementById(`card__overlay__text${productos.indexOf(producto)}`);
-    const buscarProductoCarrito = carrito.find((el) => el.titulo.toLowerCase() === producto.titulo.toLowerCase());
-    if (buscarProductoCarrito !== undefined) {
-        cardOverlayText.innerText = "You already have this product in your cart.";
-        cardOverlayText.className = "show__card__overlay__text";
-    }
-    else {
-        carrito.push(producto);
-        const carritoJson = JSON.stringify(carrito);
-        localStorage.setItem("carrito", carritoJson);
-        indicadorCantidadJuegos.innerText = `${carrito.length}`;
-        cardOverlayText.innerText = `Product added to your cart.`;
-        cardOverlayText.className = "show__card__overlay__text";
-    }
-}
-
-function renderizarCarrito() {
-    contenedorItemsCarrito.innerHTML = "";
+function renderizarCarrito(action) {
     for (const producto of carrito) {
         const div = document.createElement("div");
         div.id = "cart__item";
@@ -233,11 +213,7 @@ function renderizarCarrito() {
         h4.innerText = `$${producto.precio}`;
         h4.className = "cart__item__text";
 
-        const h42 = document.createElement("p");
-        h42.innerText = `Quantity: ${producto.stock}`;
-        h42.className = "cart__item__text";
-
-        itemsDiv.append(h3, h4, h42);
+        itemsDiv.append(h3, h4);
 
         const imgButton = document.createElement("img");
         imgButton.id = "cart__delete__item__button";
@@ -252,17 +228,39 @@ function renderizarCarrito() {
     renderizarProductos(productos);
 }
 
-function vaciarCarrito() {
-    carrito.splice(0, carrito.length);
+function agregarAlCarrito(producto) {
+    const todosLosOverlays = document.getElementsByClassName("show__card__overlay__text");
+    for(const texto of todosLosOverlays) {
+        texto.className = "closed__card__overlay__text";
+    }
+
+    const cardOverlayText = document.getElementById(`card__overlay__text${productos.indexOf(producto)}`);
+    const buscarProductoCarrito = carrito.find((el) => el.titulo.toLowerCase() === producto.titulo.toLowerCase());
+    if (buscarProductoCarrito !== undefined) {
+        cardOverlayText.innerText = "You already have this product in your cart.";
+        cardOverlayText.className = "show__card__overlay__text";
+    }
+    else {
+        carrito.push(producto);
+        const carritoJson = JSON.stringify(carrito);
+        localStorage.setItem("carrito", carritoJson);
+        indicadorCantidadJuegos.innerText = `${carrito.length}`;
+        cardOverlayText.innerText = `Product added to your cart.`;
+        cardOverlayText.className = "show__card__overlay__text";
+    }
+}
+
+function eliminarDelCarrito(producto) {
+    const indexProducto = carrito.indexOf(producto);
+    carrito.splice(indexProducto, 1);
     const carritoJSON = JSON.stringify(carrito);
     localStorage.carrito = carritoJSON;
     indicadorCantidadJuegos.innerText = `${carrito.length}`;
     renderizarCarrito();
 }
 
-function eliminarDelCarrito(producto) {
-    const indexProducto = carrito.indexOf(producto);
-    carrito.splice(indexProducto, 1);
+function vaciarCarrito() {
+    carrito.splice(0, carrito.length);
     const carritoJSON = JSON.stringify(carrito);
     localStorage.carrito = carritoJSON;
     indicadorCantidadJuegos.innerText = `${carrito.length}`;
