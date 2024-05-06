@@ -194,14 +194,17 @@ header {
 .payment__img__replace__container {
     display: flex;
     align-items: center;
-    width: 96px;
+    max-width: 30%;
     height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .cart__img__container img,
 .payment__img__container img {
-    width: 90px;
-    border-radius: 8px;
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .cart__img__replace__container,
