@@ -1,41 +1,11 @@
-/* const categorias = ["Espacio", "Mundo abierto", "Terror", "Zombis", "Buena trama", "Rol", "Fantasía", "Futurista", "Suspenso", "Cooperativo", "Cartas",
-                    "Misterio", "Decisiones", "FPS", "Exploración", "Estrategia", "Supervivencia", "Cyberpunk", "Viejo oeste", "Plataformas"] */
+/*
+const categorias = [
+    "Espacio", "Mundo abierto", "Terror", "Zombis", "Buena trama", "Rol", "Fantasía", "Futurista", "Suspenso", "Cooperativo", "Cartas",
+    "Misterio", "Decisiones", "FPS", "Exploración", "Estrategia", "Supervivencia", "Cyberpunk", "Viejo oeste", "Plataformas"
+]
+*/
 
-const productos = [
-    {image: "media/products/astro.jpg",    titulo: "Astroneer",              categoria1: "Espacio",          categoria2: "Mundo abierto",          precio: 5.99,  stock: 20},
-    {image: "media/products/f4.png",       titulo: "Fallout 4",              categoria1: "Mundo abierto",    categoria2: "Supervivencia",          precio: 11.99, stock: 17},
-    {image: "media/products/hell2.png",    titulo: "Helldivers II",          categoria1: "Futurista",        categoria2: "Acción",                 precio: 39.99, stock: 31},
-    {image: "media/products/demo.png",     titulo: "Demonologist",           categoria1: "Terror",           categoria2: "Misterio",               precio: 7.99,  stock: 35},
-    {image: "media/products/re7.png",      titulo: "Resident Evil 7",        categoria1: "Terror",           categoria2: "Acción",                 precio: 19.99, stock: 22},
-    {image: "media/products/b4b.png",      titulo: "Back 4 Blood",           categoria1: "Zombis",           categoria2: "FPS",                    precio: 29.99, stock: 14},
-    {image: "media/products/rdr2.png",     titulo: "Red Dead Redemption 2",  categoria1: "Buena trama",      categoria2: "Mundo abierto",          precio: 69.99, stock: 28},
-    {image: "media/products/bg3.png",      titulo: "Baldur's Gate 3",        categoria1: "Rol",              categoria2: "Decisiones",             precio: 34.99, stock: 20},
-    {image: "media/products/fc5.png",      titulo: "Far Cry 5",              categoria1: "Mundo abierto",    categoria2: "FPS",                    precio: 47.99, stock: 23},
-    {image: "media/products/re2.png",      titulo: "Resident Evil 2",        categoria1: "Terror",           categoria2: "Acción",                 precio: 29.99, stock: 32},
-    {image: "media/products/tma.png",      titulo: "The Mortuary Assistant", categoria1: "Terror",           categoria2: "Misterio",               precio: 12.49, stock: 16},
-    {image: "media/products/fnv.png",      titulo: "Fallout: New Vegas",     categoria1: "Mundo abierto",    categoria2: "Supervivencia",          precio: 5.99,  stock: 12},
-    {image: "media/products/re8.png",      titulo: "Resident Evil Village",  categoria1: "Terror",           categoria2: "Acción",                 precio: 29.99, stock: 46},
-    {image: "media/products/cw.png",       titulo: "Content Warning",        categoria1: "Terror",           categoria2: "Exploración",            precio: 4.49,  stock: 35},
-    {image: "media/products/hl.png",       titulo: "Hogwarts Legacy",        categoria1: "Fantasía",         categoria2: "Mundo abierto",          precio: 29.99, stock: 11},
-    {image: "media/products/lc.png",       titulo: "Lethal Company",         categoria1: "Terror",           categoria2: "Exploración",            precio: 5.79,  stock: 47},
-    {image: "media/products/c2077.png",    titulo: "Cyberpunk 2077",         categoria1: "Futurista",        categoria2: "Mundo abierto",          precio: 44.99, stock: 19},
-    {image: "media/products/f76.png",      titulo: "Fallout 76",             categoria1: "Mundo abierto",    categoria2: "Supervivencia",          precio: 4.79,  stock: 24},
-    {image: "media/products/hs.png",       titulo: "Hunt: Showdown",         categoria1: "Viejo oeste",      categoria2: "FPS",                    precio: 18.99, stock: 45},
-    {image: "media/products/re4-2005.png", titulo: "Resident Evil 4 (2005)", categoria1: "Terror",           categoria2: "Acción",                 precio: 29.99, stock: 36},
-    {image: "media/products/br.jpg",       titulo: "Buckshot Roulette",      categoria1: "Suspenso",         categoria2: "Estrategia",             precio: 1.49,  stock: 12},
-    {image: "media/products/sotf.png",     titulo: "Sons Of The Forest",     categoria1: "Terror",           categoria2: "Supervivencia",          precio: 14.99, stock: 18},
-    {image: "media/products/fc6.png",      titulo: "Far Cry 6",              categoria1: "Mundo abierto",    categoria2: "FPS",                    precio: 47.99, stock: 37},
-    {image: "media/products/dbh.png",      titulo: "Detroit: Become Human",  categoria1: "Futurista",        categoria2: "Decisiones",             precio: 31.99, stock: 44},
-    {image: "media/products/re4.png",      titulo: "Resident Evil 4",        categoria1: "Terror",           categoria2: "Acción",                 precio: 29.99, stock: 26},
-    {image: "media/products/doom-e.png",   titulo: "DOOM Eternal",           categoria1: "FPS",              categoria2: "Acción",                 precio: 23.99, stock: 11},
-    {image: "media/products/pz.png",       titulo: "Project Zomboid",        categoria1: "Zombis",           categoria2: "Mundo abierto",          precio: 10.49, stock: 28},
-    {image: "media/products/metro-e.png",   titulo: "Metro Exodus",           categoria1: "Buena trama",      categoria2: "Acción",                 precio: 22.99, stock: 33},
-    {image: "media/products/sod.png",         titulo: "Shadows of Doubt",       categoria1: "Buena trama",      categoria2: "Cyberpunk",              precio: 9.99,  stock: 31},
-    {image: "media/products/itt.jpg",         titulo: "It Takes Two",           categoria1: "Cooperativo",      categoria2: "Buena trama",            precio: 39.99, stock: 18},
-    {image: "media/products/re3.png",      titulo: "Resident Evil 3",        categoria1: "Terror",           categoria2: "Acción",                 precio: 29.99, stock: 21},
-    {image: "media/products/fc3.png",      titulo: "Far Cry 3",              categoria1: "Mundo abierto",    categoria2: "Buena trama",            precio: 17.99, stock: 27},
-    {image: "media/products/bal.png",      titulo: "Balatro",                categoria1: "Cartas",           categoria2: "Estrategia",             precio: 5.99,  stock: 29},
-];
+const productos = JSON.parse(localStorage.productos);
 let arrayActual = productos;
 
 //Renderización de productos
@@ -101,7 +71,7 @@ function renderizarProductos(array) {
 
         button.append(imgButton);
         button.addEventListener("click", () => {
-            agregarAlCarrito(producto);
+            agregarAlCarrito(producto, 1);
         })
 
         //Texto mostrado al usuario
@@ -117,7 +87,7 @@ function renderizarProductos(array) {
         contenedorProductos.append(div);
     }
 }
-renderizarProductos(arrayActual);
+renderizarProductos(productos);
 
 //Gestión de páginas
 let numeroPaginas = 0;
@@ -125,22 +95,24 @@ const textoPaginas = document.getElementById("cards__footer__text");
 const paginaAnterior = document.getElementById("cards__footer__previous-page__link");
 const siguientePagina = document.getElementById("cards__footer__next-page__link");
 paginaAnterior.addEventListener("click", () => gestionPaginas(1));
-siguientePagina.addEventListener("click", () => gestionPaginas(2))
+siguientePagina.addEventListener("click", () => gestionPaginas(2));
 
 function gestionPaginas(action) {
-    if (action === 1) {
+    if (action === 1) { //Si se presionó el botón que lleva a la página anterior
         if (inicioRenderizacion !== 0) {
-            numeroPaginas--;
+            numeroPaginas--; //Se disminuye el número de la página actual
             textoPaginas.innerText = `${numeroPaginas}`;
-
+            
+            //Se actualizan los límites de renderización
             inicioRenderizacion = inicioRenderizacion - 20;
             finRendericacion = finRendericacion - 20;
 
             verificarPagina(1);
         }
     }
-    else {
+    else { //Si se presionó el botón que lleva a la página siguiente
         if (finRendericacion < arrayActual.length) {
+            //El proceso es idéntico al anterior salvo por la acción
             numeroPaginas++;
             textoPaginas.innerText = `${numeroPaginas}`;
 
@@ -153,27 +125,33 @@ function gestionPaginas(action) {
 }
 
 function verificarPagina(action) {
-    if (action === 3) {
+    if (action === 3) { //Si se aplica el filtro de precio se vuelve a la primera página
+        //Se reestablecen los límites de renderización
         inicioRenderizacion = 0;
         finRendericacion = 20;
         
-        numeroPaginas = 0;
+        numeroPaginas = 0; //Se reestablece el número de la página actual
         textoPaginas.innerText = numeroPaginas;
         renderizarProductos(arrayActual);
     }
-    if (inicioRenderizacion === 0) {
+    
+    //Página anterior
+    if (inicioRenderizacion === 0) { //Si los límites de renderización son iniciales no se podrá volver a la página anterior
         paginaAnterior.style.display = "none";
     }
-    else {
+    else { //En el caso de que los límites de renderización no sean iniciales se permitirá volver a la página anterior
         paginaAnterior.style.display = "block";
     }
+
+    //Página siguiente
     if (finRendericacion > arrayActual.length) {
         siguientePagina.style.display = "none";
     }
     else {
         siguientePagina.style.display = "block";
     }
-    if (action === 1) {
+
+    if (action === 1) { //Si se presionó alguno de los dos botones que gestionan las páginas
         renderizarProductos(arrayActual);
     }
 }
@@ -203,15 +181,18 @@ let carrito = [];
 const indicadorCantidadJuegos = document.getElementById("cart__quantity__text");
 const botonPago = document.getElementById("cart__payment__link");
 
-if (localStorage.carrito !== undefined) { //Si la llave "carrito" existe
-    let carritoLS = JSON.parse(localStorage.carrito);
-    carrito = carritoLS;
-    indicadorCantidadJuegos.innerText = `${carrito.length}`;
-
-    if (carrito.length > 0) { //Si hay al menos un producto en el carrito, se habilitará el acceso a la página de pago
-        botonPago.setAttribute("href", "pages/payment.html")
+function obtenerCarrito() {
+    if (localStorage.carrito !== undefined) { //Si la llave "carrito" existe
+        let carritoLS = JSON.parse(localStorage.carrito);
+        carrito = carritoLS;
+        indicadorCantidadJuegos.innerText = `${carrito.length}`;
+    
+        if (carrito.length > 0) { //Si hay al menos un producto en el carrito, se habilitará el acceso a la página de pago
+            botonPago.setAttribute("href", "pages/payment.html")
+        }
     }
 }
+obtenerCarrito();
 
 //Contenedores
 const contenedorCarrito = document.getElementById("cart__sidebar__container");
@@ -237,12 +218,12 @@ function verCarrito(action) {
     let claseContenedorCarrito;
     let claseScrollCuerpo;
     let claseOverlay;
-    if (action === 1) { //Si se apretó el botón de mostrar el carrito
+    if (action === 1) { //Si se presionó el botón de mostrar el carrito
         claseContenedorCarrito = "shown";
         claseScrollCuerpo = "noscroll";
         claseOverlay = "overlay";
     }
-    else { //Si se apretó el botón de cerrar el carrito o se hizo click fuera del carrito
+    else { //Si se presionó el botón de cerrar el carrito o se hizo click fuera del carrito
         claseContenedorCarrito = "closed";   
         claseScrollCuerpo = "scroll";
         claseOverlay = "no-overlay";
@@ -312,7 +293,7 @@ function renderizarCarrito() {
     renderizarProductos(productos);
 }
 
-function agregarAlCarrito(producto) {
+function agregarAlCarrito(producto, action) {
     const todosLosOverlays = document.getElementsByClassName("show__card__overlay__text");
     for(const texto of todosLosOverlays) { //Se borran todos los textos temporales para dejar solo el último
         texto.className = "closed__card__overlay__text";
@@ -321,8 +302,10 @@ function agregarAlCarrito(producto) {
     const cardOverlayText = document.getElementById(`card__overlay__text${productos.indexOf(producto)}`);
     const buscarProductoCarrito = carrito.find((el) => el.titulo.toLowerCase() === producto.titulo.toLowerCase());
     if (buscarProductoCarrito !== undefined) { //Si el producto que se quiere agregar al carrito, ya está en él
-        cardOverlayText.innerText = "You already have this product in your cart.";
-        cardOverlayText.className = "show__card__overlay__text";
+        if (action === 1) {
+            cardOverlayText.innerText = "You already have this product in your cart.";
+            cardOverlayText.className = "show__card__overlay__text";
+        }
     }
     else { //Si el producto que se quiere agregar al carrito, NO está en él
         carrito.push(producto);
@@ -332,8 +315,10 @@ function agregarAlCarrito(producto) {
 
         indicadorCantidadJuegos.innerText = `${carrito.length}`;
 
-        cardOverlayText.innerText = `Product added to your cart.`;
-        cardOverlayText.className = "show__card__overlay__text";
+        if (action === 1) {
+            cardOverlayText.innerText = `Product added to your cart.`;
+            cardOverlayText.className = "show__card__overlay__text";
+        }
 
         botonPago.setAttribute("href", "pages/payment.html");
     }
@@ -409,7 +394,7 @@ function busquedaProductos() {
             imgButton.id = "search__add__to__cart__button";
             imgButton.setAttribute("src", "media/white-add-to-cart.png");
             imgButton.addEventListener("click", () => {
-                agregarAlCarrito(producto);
+                agregarAlCarrito(producto, 2);
             })
 
             div.append(textsDiv, imgButton);           
