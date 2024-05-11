@@ -1,10 +1,9 @@
+let isAPIWorking;
 let currentArray;
 
 const products = JSON.parse(localStorage.products);
 function getProducts() {
     return new Promise((resolve, reject) => {
-
-        //Simulación de un error en la API
         const APIError = Math.random();
         console.log(APIError)
 
@@ -15,40 +14,49 @@ function getProducts() {
             else {
                 reject({error: true})
             }
-        }, 3000);
+        }, 2000);
     })
 }
 const APIResponse = getProducts();
 
 APIResponse.then((response) => {
     currentArray = response.products;
+    isAPIWorking = true;
+    resultsIndicator.style.display = "block";
     renderProducts(currentArray);
     verifyPage();
 })
 .catch((response) => {
-    updateLoadingElements();
+    if (response.error) {
+        errorLoadingScreen();
+        isAPIWorking = false;
+    }
 });
 
-//Simulación de error en la API
-const errorIcon = document.getElementById("error__icon");
+//Simulación de un error en la API
+const loadingContainer = document.getElementById("loading__container");
+const loadingElements = document.getElementById("loading__elements");
 const loadingIcon = document.getElementById("loading__icon");
-const loadingTitle = document.getElementById("loading__title");
-const loadingText = document.getElementById("loading__text");
+const errorElements = document.getElementById("error__elements");
 
-function updateLoadingElements() {
+function errorLoadingScreen() {
+    loadingElements.style.display = "flex";
     loadingIcon.setAttribute("color", "yellow");
     setTimeout(() => {
         loadingIcon.setAttribute("color", "red");
         setTimeout(() => {
-            //Íconos
-            loadingIcon.className = "disabled";
-            errorIcon.classList = "enabled";
-
-            //Textos
-            loadingTitle.innerText = "API load time exceeded";
-            loadingText.className = "enabled";
+            loadingElements.style.display = "none";
+            errorElements.style.display = "flex";
         }, 1000);
     }, 1000);
+}
+
+function loadingScreen() {
+    productsContainer.innerHTML = "";
+    loadingElements.style.display = "flex";
+    setTimeout(() => {
+        renderProducts(currentArray);
+    }, 500);
 }
 
 //Renderización de productos
@@ -57,6 +65,7 @@ const productsContainer = document.getElementById("cards__container");
 let renderStart = 0;
 let renderEnd = 20;
 function renderProducts(array) {
+    loadingElements.style.display = "none";
     productsContainer.innerHTML = "";
 
     array = array.slice(renderStart, renderEnd);
@@ -132,6 +141,8 @@ nextPage.addEventListener("click", () => pageManager(1));
 previousPage.addEventListener("click", () => pageManager(2));
 
 function pageManager(action) {
+    productsContainer.innerHTML = "";
+
     if (action === 1) { //Si se presionó el botón que lleva a la página anterior
         if (renderStart !== 0) {
             pageNumber--;
@@ -166,7 +177,7 @@ function verifyPage(action) {
         
         pageNumber = 0; //Se reestablece el número de la página actual
         pageText.innerText = pageNumber;
-        renderProducts(currentArray);
+        loadingScreen();
     }
     
     //Página anterior
@@ -186,7 +197,7 @@ function verifyPage(action) {
     }
 
     if (action === 1) { //Si se presionó alguno de los dos botones que gestionan las páginas
-        renderProducts(currentArray);
+        loadingScreen();
     }
 }
 
@@ -220,7 +231,7 @@ function filterByPrice() {
     }
 }
 
-// Sistema de cart
+// Sistema de carrito
 let cart = [];
 const cartIndicator = document.getElementById("cart__quantity__text");
 const payButton = document.getElementById("cart__payment__button");
@@ -243,7 +254,7 @@ const cartItemsContainer = document.getElementById("cart__sidebar__items__contai
 const bodyScroll = document.getElementById("body");
 const overlay = document.getElementById("cart__sidebar__overlay");
 
-//Botones del cart
+//Botones del carrito
 const showCartButton = document.getElementById("show__cart__button");
 const closeCartButton = document.getElementById("close__cart__button");
 const emptyCartButton = document.getElementById("empty__cart__button");
@@ -426,53 +437,57 @@ function emptyCart() {
     }
 }
 
-//Busqueda de products
+//Busqueda de productos
 const searchProductsContainer = document.getElementById("search__bar__games");
 const searchBar = document.getElementById("search__bar");
 searchBar.addEventListener("input", searchProducts);
+searchBar.addEventListener("focus", searchProducts);
+searchBar.addEventListener("blur", () => {searchProductsContainer.innerHTML = ""});
 
 function searchProducts() {
-    searchProductsContainer.innerHTML = "";
     if (searchBar.value.length > 0) {
-        const foundProducts = products.filter((el) => el.title.toLowerCase().includes(searchBar.value.toLowerCase()));
-        for (const product of foundProducts) {
-            //Contenedor de toda la información de los productos buscados
-            const div = document.createElement("div");
-            div.className = "search__bar__games__item";
+        setTimeout(() => {
+            searchProductsContainer.innerHTML = "";
+            const foundProducts = products.filter((el) => el.title.toLowerCase().includes(searchBar.value.toLowerCase()));
+            for (const product of foundProducts) {
+                //Contenedor de toda la información de los productos buscados
+                const div = document.createElement("div");
+                div.className = "search__bar__games__item";
 
-            //Contenedor de los textos
-            const textsDiv = document.createElement("div");
+                //Contenedor de los textos
+                const textsDiv = document.createElement("div");
 
-            const h4 = document.createElement("h4");
-            h4.innerText = `${product.title}`;
+                const h4 = document.createElement("h4");
+                h4.innerText = `${product.title}`;
 
-            const indexproduct = cart.indexOf(product);
-            if (cart[indexproduct] === product) { //Si alguno de los productos buscados ya está en el carrito
-                h4.innerText += " (in your cart)";
+                const indexproduct = cart.indexOf(product);
+                if (cart[indexproduct] === product) { //Si alguno de los productos buscados ya está en el carrito
+                    h4.innerText += " (in your cart)";
+                }
+
+                h4.className = "search__bar__games__item__texts";
+
+                const h5 = document.createElement("h5");
+                h5.innerText = `$${product.price}`;
+                h5.className = "search__bar__games__item__texts";
+
+                const h52 = document.createElement("h5");
+                h52.innerText = `Stock: ${product.stock}`;
+                h52.className = "search__bar__games__item__texts";
+
+                textsDiv.append(h4, h5, h52);
+
+                //Botón
+                const imgButton = document.createElement("img");
+                imgButton.id = "search__add__to__cart__button";
+                imgButton.setAttribute("src", "media/white-add-to-cart.png");
+                imgButton.addEventListener("click", () => {
+                    addToCart(product);
+                })
+
+                div.append(textsDiv, imgButton);           
+                searchProductsContainer.append(div);
             }
-
-            h4.className = "search__bar__games__item__texts";
-
-            const h5 = document.createElement("h5");
-            h5.innerText = `$${product.price}`;
-            h5.className = "search__bar__games__item__texts";
-
-            const h52 = document.createElement("h5");
-            h52.innerText = `Stock: ${product.stock}`;
-            h52.className = "search__bar__games__item__texts";
-
-            textsDiv.append(h4, h5, h52);
-
-            //Botón
-            const imgButton = document.createElement("img");
-            imgButton.id = "search__add__to__cart__button";
-            imgButton.setAttribute("src", "media/white-add-to-cart.png");
-            imgButton.addEventListener("click", () => {
-                addToCart(product);
-            })
-
-            div.append(textsDiv, imgButton);           
-            searchProductsContainer.append(div);
-        }
+        }, 250);
     }
 }
