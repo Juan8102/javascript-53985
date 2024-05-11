@@ -1,6 +1,6 @@
 let isAPIWorking;
-let currentArray;
 
+let currentArray;
 const products = JSON.parse(localStorage.products);
 function getProducts() {
     return new Promise((resolve, reject) => {
@@ -9,10 +9,10 @@ function getProducts() {
 
         setTimeout(() => {
             if (APIError > 0.05) {
-                resolve({error: false, products: products})
+                resolve({products: products})
             }
             else {
-                reject({error: true})
+                reject()
             }
         }, 2000);
     })
@@ -26,11 +26,10 @@ APIResponse.then((response) => {
     renderProducts(currentArray);
     verifyPage();
 })
-.catch((response) => {
-    if (response.error) {
-        errorLoadingScreen();
-        isAPIWorking = false;
-    }
+.catch(() => {
+    isAPIWorking = false;
+    errorLoadingScreen();
+    
 });
 
 //Simulación de un error en la API
@@ -205,17 +204,20 @@ function verifyPage(action) {
 const resultsIndicator = document.getElementById("filters__indicator");
 const priceRangeText = document.getElementById("price__range__text");
 const priceRangeSlider = document.getElementById("price__range");
-priceRangeSlider.addEventListener("change", filterByPrice);
-
-priceRangeSlider.addEventListener("input", () => {
-    const priceRange = priceRangeSlider.value * 6;
-    if (priceRange !== 0) {
-        priceRangeText.innerText = `Less than $${priceRange}`;
+setTimeout(() => {
+    if (isAPIWorking) {
+        priceRangeSlider.addEventListener("change", filterByPrice);
+        priceRangeSlider.addEventListener("input", () => {
+            const priceRange = priceRangeSlider.value * 6;
+            if (priceRange !== 0) {
+                priceRangeText.innerText = `Less than $${priceRange}`;
+            }
+            else {
+                priceRangeText.innerText = "Any price";
+            }
+        });
     }
-    else {
-        priceRangeText.innerText = "Any price";
-    }
-});
+}, 2000);
 
 function filterByPrice() {
     const priceRange = priceRangeSlider.value * 6;
@@ -440,9 +442,19 @@ function emptyCart() {
 //Busqueda de productos
 const searchProductsContainer = document.getElementById("search__bar__games");
 const searchBar = document.getElementById("search__bar");
-searchBar.addEventListener("input", searchProducts);
-searchBar.addEventListener("focus", searchProducts);
-searchBar.addEventListener("blur", () => {searchProductsContainer.innerHTML = ""});
+setTimeout(() => {
+    if (isAPIWorking) {
+        searchBar.addEventListener("input", searchProducts);
+        searchBar.addEventListener("focus", searchProducts);
+        searchBar.addEventListener("blur", () => {
+            if (searchBar.value.length === 0) {
+                setTimeout(() => {
+                    searchProductsContainer.innerHTML = "";
+                }, 250);
+            }
+        });
+    }
+}, 2000);
 
 function searchProducts() {
     if (searchBar.value.length > 0) {
@@ -459,11 +471,6 @@ function searchProducts() {
 
                 const h4 = document.createElement("h4");
                 h4.innerText = `${product.title}`;
-
-                const indexproduct = cart.indexOf(product);
-                if (cart[indexproduct] === product) { //Si alguno de los productos buscados ya está en el carrito
-                    h4.innerText += " (in your cart)";
-                }
 
                 h4.className = "search__bar__games__item__texts";
 

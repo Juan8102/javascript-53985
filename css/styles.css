@@ -510,14 +510,10 @@ footer {
 
 #loading__elements,
 #error__elements {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-wrap: nowrap;
-}
-
-#loading__elements {
-    display: flex;
 }
 
 #loading__elements h3 {
