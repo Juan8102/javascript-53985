@@ -1,35 +1,35 @@
-let productos = JSON.parse(localStorage.productos);
+let products = JSON.parse(localStorage.products);
 
-let carrito = [];
-if (localStorage.carrito !== undefined) {
-    let carritoLS = JSON.parse(localStorage.carrito);
-    carrito = carritoLS;
+let cart = [];
+if (localStorage.cart !== undefined) {
+    let localStorageCart = JSON.parse(localStorage.cart);
+    cart = localStorageCart;
 }
 
-const contenedorItemsPago = document.getElementById("payment__products__container");
-const textoTotalAPagar = document.getElementById("total__price__text");
+const paymentItemsContainer = document.getElementById("payment__products__container");
+const totalPriceText = document.getElementById("total__price__text");
 
-function calculoTotalAPagar() {
-    const totalAPagar = carrito.reduce((acc, el) => acc + el.precio, 0);
+function totalPriceCalculation() {
+    const totalAPagar = cart.reduce((acc, el) => acc + el.price, 0);
     let totalPor100 = totalAPagar * 100;           //Se multiplica el total a pagar por 100 para desplazar los decimales
     let totalRedondeado = Math.round(totalPor100); //Se redondea el número multiplicado
     let total = totalRedondeado / 100;             //Se divide entre 100 para volver a la escala original
-    textoTotalAPagar.innerText = `Total price: $${total}`;
-    renderizarProductos();
+    totalPriceText.innerText = `Total price: $${total}`;
+    renderProducts();
 }
 
-function renderizarProductos(total) {
-    for (const producto of carrito) {
+function renderProducts(total) {
+    for (const product of cart) {
         const div = document.createElement("div");
         div.className = "payment__item";
 
         const imgDiv = document.createElement("div");
 
         let image;
-        if (producto.image !== "") {
+        if (product.image !== "") {
             imgDiv.className = "payment__img__container";
             const img = document.createElement("img");
-            img.setAttribute("src", `../${producto.image}`);
+            img.setAttribute("src", `../${product.image}`);
 
             imgDiv.append(img);
             image = imgDiv;
@@ -49,33 +49,33 @@ function renderizarProductos(total) {
         itemsDiv.className = "payment__item__text__container";
 
         const h3 = document.createElement("h3");
-        h3.innerText = producto.titulo;
+        h3.innerText = product.title;
         h3.className = "payment__item__text";
         
         const h4 = document.createElement("h4");
-        h4.innerText = `$${producto.precio}`;
+        h4.innerText = `$${product.price}`;
         h4.className = "payment__item__text";
 
         itemsDiv.append(h3, h4);
 
         div.append(image, itemsDiv);
-        contenedorItemsPago.append(div);
+        paymentItemsContainer.append(div);
     }
 }
-calculoTotalAPagar()
+totalPriceCalculation()
 
-const botonConfirmar = document.getElementById("confirm__pay__button");
-botonConfirmar.addEventListener("click", finalizarCompra)
+const confirmButton = document.getElementById("confirm__pay__button");
+confirmButton.addEventListener("click", completePurchase)
 
-function finalizarCompra() {
-    for (const producto of carrito) {
-        const buscarProductos = productos.find((el) => el.titulo === producto.titulo);
-        const indexProducto = productos.indexOf(buscarProductos);
-        productos[indexProducto].stock--;
+function completePurchase() {
+    for (const product of cart) {
+        const searchProducts = products.find((el) => el.title === product.title);
+        const productIndex = products.indexOf(searchProducts);
+        products[productIndex].stock--;
     }
 
-    const productosJSON = JSON.stringify(productos);
-    localStorage.setItem("productos", productosJSON);
-    localStorage.setItem("carrito", "[]");
-    carrito = [];
+    const productsJSON = JSON.stringify(products);
+    localStorage.setItem("products", productsJSON);
+    localStorage.setItem("cart", "[]");
+    cart = [];
 }
