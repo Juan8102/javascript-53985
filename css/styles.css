@@ -147,7 +147,7 @@ header {
     height: 78px;
 
     padding: 0 15px;
-    background-color:  black;
+    background: linear-gradient(to left, #080808, #242424);
     border-bottom: solid 2px white;
 }
 
@@ -244,7 +244,7 @@ header {
     width: 100%;
     height: 70px;
     padding: 0 16px;
-    background-color: rgba(0, 0, 0, 0.99);
+    background: linear-gradient(.03turn, #080808, #242424);
     border-top: solid 2px white;
 }
 
@@ -252,16 +252,15 @@ header {
     color: white;
     font-weight: 200;
     font-size: 17px;
-    background: linear-gradient(.51turn, #9c22ff, #7800da);
+    background: rgb(163, 33, 33);
     border-radius: 4px;
-    box-shadow: -1px 1px 1px 1px rgb(30, 30, 30);
     padding: 3px 6px;
     cursor: not-allowed;
 }
 
 #cart__sidebar__footer h3:last-child {
+    background: rgb(21, 138, 52);
     cursor: not-allowed;
-    box-shadow: 1px 1px 1px 1px rgb(30, 30, 30);
 }
 
 #cart__sidebar__footer a {
@@ -508,8 +507,7 @@ footer {
     height: min-content;
 }
 
-#loading__elements,
-#error__elements {
+#loading__elements {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -5,7 +5,6 @@ const products = JSON.parse(localStorage.products);
 function getProducts() {
     return new Promise((resolve, reject) => {
         const APIError = Math.random();
-        console.log(APIError)
 
         setTimeout(() => {
             if (APIError > 0.05) {
@@ -19,43 +18,54 @@ function getProducts() {
 }
 const APIResponse = getProducts();
 
-APIResponse.then((response) => {
-    currentArray = response.products;
-    isAPIWorking = true;
-    resultsIndicator.style.display = "block";
-    renderProducts(currentArray);
-    verifyPage();
-})
-.catch(() => {
-    isAPIWorking = false;
-    errorLoadingScreen();
-    
-});
+APIResponse
+    .then((response) => {
+        currentArray = response.products;
+        isAPIWorking = true;
+        resultsIndicator.style.display = "block";
+        
+        renderProducts(currentArray);
+        verifyPage();
+    })
+    .catch(() => {
+        isAPIWorking = false;
+        errorLoadingScreen();
+    });
 
 //Simulación de un error en la API
 const loadingContainer = document.getElementById("loading__container");
 const loadingElements = document.getElementById("loading__elements");
 const loadingIcon = document.getElementById("loading__icon");
-const errorElements = document.getElementById("error__elements");
 
 function errorLoadingScreen() {
-    loadingElements.style.display = "flex";
     loadingIcon.setAttribute("color", "yellow");
     setTimeout(() => {
         loadingIcon.setAttribute("color", "red");
         setTimeout(() => {
-            loadingElements.style.display = "none";
-            errorElements.style.display = "flex";
+            loadingElements.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="red"><path d="M479.98-280q14.02 0 23.52-9.48t9.5-23.5q0-14.02-9.48-23.52t-23.5-9.5q-14.02 0-23.52 9.48t-9.5 23.5q0 14.02 9.48 23.52t23.5 9.5ZM453-433h60v-253h-60v253Zm27.27 353q-82.74 0-155.5-31.5Q252-143 197.5-197.5t-86-127.34Q80-397.68 80-480.5t31.5-155.66Q143-709 197.5-763t127.34-85.5Q397.68-880 480.5-880t155.66 31.5Q709-817 763-763t85.5 127Q880-563 880-480.27q0 82.74-31.5 155.5Q817-252 763-197.68q-54 54.31-127 86Q563-80 480.27-80Zm.23-60Q622-140 721-239.5t99-241Q820-622 721.19-721T480-820q-141 0-240.5 98.81T140-480q0 141 99.5 240.5t241 99.5Zm-.5-340Z"/></svg>
+                <h3>API load time exceeded</h3>
+                <h4>Try reloading the page</h4>
+            `;
         }, 1000);
     }, 1000);
 }
 
 function loadingScreen() {
     productsContainer.innerHTML = "";
-    loadingElements.style.display = "flex";
+    loadingElements.innerHTML = `
+        <l-ring id="loading__icon"
+            size="42"
+            stroke="3"
+            bg-opacity="0"
+            speed="2"
+            color="white" 
+        ></l-ring>
+        <h3>Loading...</h3>
+    `;
     setTimeout(() => {
         renderProducts(currentArray);
-    }, 500);
+    }, 1000);
 }
 
 //Renderización de productos
@@ -64,7 +74,7 @@ const productsContainer = document.getElementById("cards__container");
 let renderStart = 0;
 let renderEnd = 20;
 function renderProducts(array) {
-    loadingElements.style.display = "none";
+    loadingElements.innerHTML = "";
     productsContainer.innerHTML = "";
 
     array = array.slice(renderStart, renderEnd);
@@ -111,19 +121,24 @@ function renderProducts(array) {
             const p = document.createElement("p");
             p.innerText = `Stock: ${product.stock}`;
 
+            textsDiv.append(h3, h4, p);
+
             //Botón
-            const button = document.createElement("button");
-            button.className = "card__button";
+            const isProductInCart = cart.find((el) => el.title === product.title);
+            if (isProductInCart === undefined) {
+                const button = document.createElement("button");
+                button.className = "card__button";
 
-            const imgButton = document.createElement("img");
-            imgButton.setAttribute("src", "media/add-to-cart.png");
+                const imgButton = document.createElement("img");
+                imgButton.setAttribute("src", "media/add-to-cart.png");
 
-            button.append(imgButton);
-            button.addEventListener("click", () => {
-                addToCart(product);
-            })
+                button.append(imgButton);
+                button.addEventListener("click", () => {
+                    addToCart(product);
+                })
 
-            textsDiv.append(h3, h4, p, button);
+                textsDiv.append(button);
+            }
 
             div.append(imgDiv, textsDiv);
             productsContainer.append(div);
@@ -223,11 +238,15 @@ function filterByPrice() {
     const priceRange = priceRangeSlider.value * 6;
     if (priceRange !== 0) { //Si el filtro de price es aplicado, se realizará el filtrado correspondiente
         currentArray = products.filter((el) => el.price <= priceRange);
-        resultsIndicator.innerText = `${currentArray.length} results`;
+        setTimeout(() => {
+            resultsIndicator.innerText = `${currentArray.length} results`;
+        }, 1000);
         verifyPage(3);
     }
     else { //Si el filtro de price no es aplicado, se mostrarán todos los products
-        resultsIndicator.innerText = "All games"
+        setTimeout(() => {
+            resultsIndicator.innerText = "All games";
+        }, 1000);
         currentArray = products;
         verifyPage(3);
     }
@@ -354,8 +373,7 @@ function renderCart() {
         payButton.style.cursor = "not-allowed";
         payLink.setAttribute("href", "#!");
     }
-
-    renderProducts(products);
+    renderProducts(currentArray);
 }
 
 function addToCart(product) {
@@ -398,6 +416,7 @@ function addToCart(product) {
               cursor: "auto",
             },
         }).showToast();
+        renderProducts(currentArray);
     }
 }
 
@@ -414,28 +433,38 @@ function deleteFromCart(product) {
 
 function emptyCart() {
     if (cart.length > 0) {
-        cart.splice(0, cart.length);
+        Swal.fire({
+            title: "Are you sure that you want to empty your cart?",
+            showCancelButton: true,
+            confirmButtonText: "Confirm",
+          }).then((result) => {
+            if (result.isConfirmed) {
+                cart.splice(0, cart.length);
 
-        const cartJSON = JSON.stringify(cart);
-        localStorage.cart = cartJSON;
-        cartIndicator.innerText = `${cart.length}`;
+                const cartJSON = JSON.stringify(cart);
+                localStorage.cart = cartJSON;
+                cartIndicator.innerText = `${cart.length}`;
 
-        Toastify({
-            text: "Your cart has been emptied succesfully",
-            duration: 4000,
-            gravity: "top",
-            position: "right",
-            offset: {
-                x: "16px",
-                y: "70px",
-            },
-            style: {
-              background: "linear-gradient(to left, rgb(50, 125, 50), rgb(50, 150, 50))",
-              cursor: "auto",
-            },
-        }).showToast();
+                Toastify({
+                    text: "Your cart has been emptied succesfully",
+                    fontSize: "12px",
+                    duration: 4000,
+                    gravity: "top",
+                    position: "right",
+                    offset: {
+                        x: "16px",
+                        y: "70px",
+                    },
+                    style: {
+                        background: "linear-gradient(to left, rgb(50, 125, 50), rgb(50, 150, 50))",
+                        cursor: "auto",
+                    },
+                }).showToast();
 
-        renderCart();
+                Swal.fire("Cart emptied!", "Your cart has been emptied successfully.", "success");
+                renderCart();
+            }
+        });
     }
 }
 
