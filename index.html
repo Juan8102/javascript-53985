@@ -3,10 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-        <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ring.js"></script>
-        <script src="js/products.js"></script>
+
+        <!-- LIBRERÍAS -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SWEETALERT -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> <!-- TOASTIFY -->
+        <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ring.js"></script> <!-- SPINNER DE CARGA -->
+
+        <!-- LOCAL -->
         <link rel="stylesheet" href="css/styles.css">
         <link rel="shortcut icon" href="media/x_icon.png" type="image/x-icon">
         <title>GameX · Home</title>
@@ -31,7 +34,7 @@
         <header>
             <div id="header__container">
                 <div id="account__manager">
-                    <img src="media/user.jpg">
+                    <img id="account__icon" src="media/user.jpg">
                 </div>
                 <ul id="header__links__list">
                     <li class="header__link"><a class="header__link__item">Home</a></li>

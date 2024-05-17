@@ -36,6 +36,17 @@ header {
     z-index: 800;
 }
 
+#header__container {
+    display: grid;
+    grid-template-columns: 4% 66% 30%;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+/* CUENTA */
 #account__manager {
     width: 46px;
     height: 46px;
@@ -52,20 +63,11 @@ header {
     object-fit: contain;
     cursor: pointer;
 }
-
-#header__container {
-    display: grid;
-    grid-template-columns: 4% 66% 30%;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-    height: 100%;
-}
+/* CUENTA */
 
 #header__links__list {
     display: flex;
-
+    width: min-content;
     list-style-type: none; 
 }
 
@@ -425,9 +427,9 @@ footer {
 }
 
 #search__add__to__cart__button {
-    align-self: last baseline;
-    width: 30px;
-    height: 30px;
+    align-self: center;
+    width: 32px;
+    height: 32px;
     margin-left: auto;
     cursor: pointer;
 }
@@ -495,7 +497,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    height: 100%;
+    height: min-content;
     padding: 16px 0;
 }
 
@@ -523,7 +525,7 @@ footer {
     grid-template-columns: 100%;
     grid-template-rows: 45% 53%;
     grid-gap: 2%;
-    width: 230px;
+    width: 220px;
     height: 280px;
     margin: 20px 20px;
     padding: 15px;
@@ -533,19 +535,6 @@ footer {
     color: white;
     line-height: 175%;
     text-decoration: none;
-}
-
-#img__replace {
-    display: flex;
-    align-items: center;
-    width: 50%;
-    height: 85%;
-    margin-bottom: 6px;
-    background-color: black;
-}
-
-#img__replace__text {
-    text-align: center;
 }
 
 #product__image__container {
@@ -565,7 +554,12 @@ footer {
     align-items: center;
 }
 
-.card__button {
+.card h3 {
+    font-weight: 400;
+}
+
+.card__button,
+.cart__card__button {
     width: min-content;
     margin: 4px 0;
     padding: 5px 6px;
@@ -575,8 +569,13 @@ footer {
     cursor: pointer;
 }
 
-.card__button img {
+.card__button img,
+.cart__card__button img {
     width: 30px;
+}
+
+.cart__card__button {
+    background-color: rgb(64, 237, 64);
 }
 
 #cards__end {
