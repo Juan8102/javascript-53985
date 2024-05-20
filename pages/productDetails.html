@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- LIBRERÍAS -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SWEETALERT -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> <!-- TOASTIFY -->
+
+        <link id="page__icon" rel="shortcut icon" href="../media/x_icon.png" type="image/x-icon">
+        <link rel="stylesheet" href="../css/styles.css">
+        <title></title>
+    </head>
+    <body class="scroll" id="body">
+        <div class="closed" id="cart__sidebar__container">
+            <div id="cart__sidebar" class="2">
+                <div id="cart__sidebar__header">
+                    <h3>Your cart</h3>
+                    <img id="close__cart__button" src="../media/white_cross.png" alt="An icon of a white cross">
+                </div>
+                <div id="cart__sidebar__items__container">
+                    
+                </div>
+                <div id="cart__sidebar__footer">
+                    <h3 id="empty__cart__button">Empty cart</h3>
+                    <a href="payment.html" id="cart__payment__link">
+                        <h3 id="cart__payment__button">Payment</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="no-overlay" id="cart__sidebar__overlay"></div>
+        <header>
+            <div id="header__container">
+                <div id="account__manager">
+                    <img id="account__icon" src="../media/user.jpg">
+                </div>
+                <ul id="header__links__list">
+                    <li class="header__link"><a href="../index.html" class="header__link__item">Home</a></li>
+                    <li class="header__link"><a href="../index.html#games__location" class="header__link__item">Games</a></li>
+                </ul>
+                <div id="cart__image__container">
+                    <p id="cart__quantity__text">0</p>
+                    <img src="../media/white-shopping-cart.png" id="show__cart__button" alt="Shopping cart icon" />
+                </div>
+            </div>
+        </header>
+        <main>
+            <div id="product__info--center">
+                <div id="product__info__container">
+                    
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>© GameX - All rights reserved</p>
+        </footer>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script> <!-- TOASTIFY -->
+        <script src="../js/cartFunctions.js"></script>
+        <script src="../js/productDetails.js"></script>        
+    </body>
+</html>

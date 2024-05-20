@@ -1,0 +1,318 @@
+[
+    {
+      "image": "media/products/astro.jpg",
+      "title": "Astroneer",
+      "price": 5.99,
+      "available": true,
+      "release_date": "2016-12-16",
+      "company": "System Era Softworks"
+    }, {
+      "image": "media/products/f4.png",
+      "title": "Fallout 4",
+      "price": 11.99,
+      "available": true,
+      "release_date": "2015-11-10",
+      "company": "Bethesda Game Studios"
+    }, {
+      "image": "media/products/hell2.png",
+      "title": "Helldivers II",
+      "price": 39.99,
+      "available": true,
+      "release_date": "2024-02-08",
+      "company": "Arrowhead Game Studios"
+    }, {
+      "image": "media/products/demo.png",
+      "title": "Demonologist",
+      "price": 7.99,
+      "available": true,
+      "release_date": "2023-03-27",
+      "company": "Clock Wizard Games"
+    }, {
+      "image": "media/products/re7.png",
+      "title": "Resident Evil 7",
+      "price": 19.99,
+      "available": true,
+      "release_date": "2017-01-24",
+      "company": "Capcom"
+    }, {
+      "image": "media/products/b4b.png",
+      "title": "Back 4 Blood",
+      "price": 29.99,
+      "available": true,
+      "release_date": "2021-10-12",
+      "company": "Turtle Rock Studios"
+    }, {
+      "image": "media/products/rdr2.png",
+      "title": "Red Dead Redemption 2",
+      "price": 69.99,
+      "available": true,
+      "release_date": "2018-10-26",
+      "company": "Rockstar Games"
+    }, {
+      "image": "media/products/bg3.png",
+      "title": "Baldur's Gate 3",
+      "price": 34.99,
+      "available": true,
+      "release_date": "2023-08-03",
+      "company": "Larian Studios"
+    }, {
+      "image": "media/products/fc5.png",
+      "title": "Far Cry 5",
+      "price": 47.99,
+      "available": false,
+      "release_date": "2018-03-27",
+      "company": "Ubisoft"
+    }, {
+      "image": "media/products/re2.png",
+      "title": "Resident Evil 2",
+      "price": 29.99,
+      "available": true,
+      "release_date": "2019-01-25",
+      "company": "Capcom"
+    }, {
+      "image": "media/products/tma.png",
+      "title": "The Mortuary Assistant",
+      "price": 12.49,
+      "available": true,
+      "release_date": "2022-08-02",
+      "company": "DarkStone Digital"
+    }, {
+      "image": "media/products/fnv.png",
+      "title": "Fallout: New Vegas",
+      "price": 5.99,
+      "available": true,
+      "release_date": "2010-10-19",
+      "company": "Obsidian Entertainment"
+    }, {
+      "image": "media/products/re8.png",
+      "title": "Resident Evil Village",
+      "price": 29.99,
+      "available": true,
+      "release_date": "2021-05-07",
+      "company": "Capcom"
+    }, {
+      "image": "media/products/cw.png",
+      "title": "Content Warning",
+      "price": 4.49,
+      "available": true,
+      "release_date": "2022-08-02",
+      "company": "Andrea Pignataro"
+    }, {
+      "image": "media/products/hl.png",
+      "title": "Hogwarts Legacy",
+      "price": 29.99,
+      "available": true,
+      "release_date": "2023-02-10",
+      "company": "Portkey Games"
+    }, {
+      "image": "media/products/lc.png",
+      "title": "Lethal Company",
+      "price": 5.79,
+      "available": true,
+      "release_date": "2023-10-23",
+      "company": "LethalSOUL"
+    }, {
+      "image": "media/products/c2077.png",
+      "title": "Cyberpunk 2077",
+      "price": 44.99,
+      "available": true,
+      "release_date": "2020-12-10",
+      "company": "CD Projekt Red"
+    }, {
+      "image": "media/products/f76.png",
+      "title": "Fallout 76",
+      "price": 4.79,
+      "available": true,
+      "release_date": "2018-11-14",
+      "company": "Bethesda Game Studios"
+    }, {
+      "image": "media/products/hs.png",
+      "title": "Hunt: Showdown",
+      "price": 18.99,
+      "available": true,
+      "release_date": "2019-08-27",
+      "company": "Crytek"
+    }, {
+      "image": "media/products/re4-2005.png",
+      "title": "Resident Evil 4 (2005)",
+      "price": 29.99,
+      "available": true,
+      "release_date": "2005-01-11",
+      "company": "Capcom"
+    }, {
+      "image": "media/products/br.jpg",
+      "title": "Buckshot Roulette",
+      "price": 1.49,
+      "available": true,
+      "release_date": "2020-12-21",
+      "company": "Seaborgium Entertainment"
+    }, {
+      "image": "media/products/sotf.png",
+      "title": "Sons Of The Forest",
+      "price": 14.99,
+      "available": true,
+      "release_date": "2023-02-23",
+      "company": "Endnight Games"
+    }, {
+      "image": "media/products/fc6.png",
+      "title": "Far Cry 6",
+      "price": 47.99,
+      "available": true,
+      "release_date": "2021-10-07",
+      "company": "Ubisoft"
+    }, {
+      "image": "media/products/dbh.png",
+      "title": "Detroit: Become Human",
+      "price": 31.99,
+      "available": true,
+      "release_date": "2018-05-25",
+      "company": "Quantic Dream"
+    }, {
+      "image": "media/products/re4.png",
+      "title": "Resident Evil 4",
+      "price": 29.99,
+      "available": true,
+      "release_date": "2023-03-24",
+      "company": "Capcom"
+    }, {
+      "image": "media/products/doom-e.png",
+      "title": "DOOM Eternal",
+      "price": 23.99,
+      "available": true,
+      "release_date": "2020-03-20",
+      "company": "id Software"
+    }, {
+      "image": "media/products/pz.png",
+      "title": "Project Zomboid",
+      "price": 10.49,
+      "available": false,
+      "release_date": "2013-11-08",
+      "company": "The Indie Stone"
+    }, {
+      "image": "media/products/metro-e.png",
+      "title": "Metro Exodus",
+      "price": 22.99,
+      "available": true,
+      "release_date": "2019-02-15",
+      "company": "4A Games"
+    }, {
+      "image": "media/products/sod.png",
+      "title": "Shadows of Doubt",
+      "price": 9.99,
+      "available": true,
+      "release_date": "2023-04-24",
+      "company": "ColePowered Games"
+    }, {
+      "image": "media/products/itt.jpg",
+      "title": "It Takes Two",
+      "price": 39.99,
+      "available": true,
+      "release_date": "2021-03-26",
+      "company": "Hazelight Studios"
+    }, {
+      "image": "media/products/re3.png",
+      "title": "Resident Evil 3",
+      "price": 29.99,
+      "available": true,
+      "release_date": "2020-04-03",
+      "company": "Capcom"
+    }, {
+      "image": "media/products/fc3.png",
+      "title": "Far Cry 3",
+      "price": 17.99,
+      "available": true,
+      "release_date": "2012-11-29",
+      "company": "Ubisoft"
+    }, {
+      "image": "media/products/bal.png",
+      "title": "Balatro",
+      "price": 5.99,
+      "available": true,
+      "release_date": "2023-09-13",
+      "company": "Aether Interactive"
+    }, {
+      "image": "media/products/nms.png",
+      "title": "No Man's Sky",
+      "price": 49.99,
+      "available": true,
+      "release_date": "2016-08-09",
+      "company": "Hello Games"
+    }, {
+      "image": "media/products/ac3.png",
+      "title": "Assassin's Creed III",
+      "price": 29.99,
+      "available": true,
+      "release_date": "2012-10-30",
+      "company": "Ubisoft"
+    }, {
+      "image": "media/products/tlou2.png",
+      "title": "The Last of Us Part II",
+      "price": 39.99,
+      "available": true,
+      "release_date": "2020-06-19",
+      "company": "Naughty Dog"
+    }, {
+      "image": "media/products/valh.png",
+      "title": "Valheim",
+      "price": 19.99,
+      "available": true,
+      "release_date": "2021-02-02",
+      "company": "Iron Gate Studio"
+    }, {
+      "image": "media/products/wd2.png",
+      "title": "Watch Dogs 2",
+      "price": 24.99,
+      "available": true,
+      "release_date": "2016-11-15",
+      "company": "Ubisoft"
+    }, {
+      "image": "media/products/dvm5.png",
+      "title": "Devil May Cry 5",
+      "price": 29.99,
+      "available": true,
+      "release_date": "2019-03-08",
+      "company": "Capcom"
+    }, {
+      "image": "media/products/ds3.png",
+      "title": "Dark Souls III",
+      "price": 39.99,
+      "available": true,
+      "release_date": "2016-03-24",
+      "company": "FromSoftware"
+    }, {
+      "image": "media/products/gtav.png",
+      "title": "Grand Theft Auto V",
+      "price": 29.99,
+      "available": true,
+      "release_date": "2013-09-17",
+      "company": "Rockstar Games"
+    }, {
+      "image": "media/products/nba24.png",
+      "title": "NBA 2k24",
+      "price": 49.99,
+      "available": true,
+      "release_date": "2023-09-08",
+      "company": "Visual Concepts"
+    }, {
+      "image": "media/products/fc24.png",
+      "title": "FC 24",
+      "price": 59.99,
+      "available": true,
+      "release_date": "2023-09-29",
+      "company": "EA Sports"
+    }, {
+      "image": "media/products/r6.png",
+      "title": "Rainbow Six Siege",
+      "price": 19.99,
+      "available": false,
+      "release_date": "2015-12-01",
+      "company": "Ubisoft"
+    }, {
+      "image": "media/products/hzd.png",
+      "title": "Horizon Zero Dawn",
+      "price": 49.99,
+      "available": true,
+      "release_date": "2017-02-28",
+      "company": "Guerrilla Games"
+    }
+  ]

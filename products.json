@@ -1,228 +1,1329 @@
 [
-    {
-      "image": "media/products/astro.jpg",
-      "title": "Astroneer",
-      "price": 5.99,
-      "available": true
-    }, {
-      "image": "media/products/f4.png",
-      "title": "Fallout 4",
-      "price": 11.99,
-      "available": true
-    }, {
-      "image": "media/products/hell2.png",
-      "title": "Helldivers II",
-      "price": 39.99,
-      "available": true
-    }, {
-      "image": "media/products/demo.png",
-      "title": "Demonologist",
-      "price": 7.99,
-      "available": true
-    }, {
-      "image": "media/products/re7.png",
-      "title": "Resident Evil 7",
-      "price": 19.99,
-      "available": true
-    }, {
-      "image": "media/products/b4b.png",
-      "title": "Back 4 Blood",
-      "price": 29.99,
-      "available": true
-    }, {
-      "image": "media/products/rdr2.png",
-      "title": "Red Dead Redemption 2",
-      "price": 69.99,
-      "available": true
-    }, {
-      "image": "media/products/bg3.png",
-      "title": "Baldur's Gate 3",
-      "price": 34.99,
-      "available": true
-    }, {
-      "image": "media/products/fc5.png",
-      "title": "Far Cry 5",
-      "price": 47.99,
-      "available": false
-    }, {
-      "image": "media/products/re2.png",
-      "title": "Resident Evil 2",
-      "price": 29.99,
-      "available": true
-    }, {
-      "image": "media/products/tma.png",
-      "title": "The Mortuary Assistant",
-      "price": 12.49,
-      "available": true
-    }, {
-      "image": "media/products/fnv.png",
-      "title": "Fallout: New Vegas",
-      "price": 5.99,
-      "available": true
-    }, {
-      "image": "media/products/re8.png",
-      "title": "Resident Evil Village",
-      "price": 29.99,
-      "available": true
-    }, {
-      "image": "media/products/cw.png",
-      "title": "Content Warning",
-      "price": 4.49,
-      "available": true
-    }, {
-      "image": "media/products/hl.png",
-      "title": "Hogwarts Legacy",
-      "price": 29.99,
-      "available": true
-    }, {
-      "image": "media/products/lc.png",
-      "title": "Lethal Company",
-      "price": 5.79,
-      "available": true
-    }, {
-      "image": "media/products/c2077.png",
-      "title": "Cyberpunk 2077",
-      "price": 44.99,
-      "available": true
-    }, {
-      "image": "media/products/f76.png",
-      "title": "Fallout 76",
-      "price": 4.79,
-      "available": true
-    }, {
-      "image": "media/products/hs.png",
-      "title": "Hunt: Showdown",
-      "price": 18.99,
-      "available": true
-    }, {
-      "image": "media/products/re4-2005.png",
-      "title": "Resident Evil 4 (2005)",
-      "price": 29.99,
-      "available": true
-    }, {
-      "image": "media/products/br.jpg",
-      "title": "Buckshot Roulette",
-      "price": 1.49,
-      "available": true
-    }, {
-      "image": "media/products/sotf.png",
-      "title": "Sons Of The Forest",
-      "price": 14.99,
-      "available": true
-    }, {
-      "image": "media/products/fc6.png",
-      "title": "Far Cry 6",
-      "price": 47.99,
-      "available": true
-    }, {
-      "image": "media/products/dbh.png",
-      "title": "Detroit: Become Human",
-      "price": 31.99,
-      "available": true
-    }, {
-      "image": "media/products/re4.png",
-      "title": "Resident Evil 4",
-      "price": 29.99,
-      "available": true
-    }, {
-      "image": "media/products/doom-e.png",
-      "title": "DOOM Eternal",
-      "price": 23.99,
-      "available": true
-    }, {
-      "image": "media/products/pz.png",
-      "title": "Project Zomboid",
-      "price": 10.49,
-      "available": false
-    }, {
-      "image": "media/products/metro-e.png",
-      "title": "Metro Exodus",
-      "price": 22.99,
-      "available": true
-    }, {
-      "image": "media/products/sod.png",
-      "title": "Shadows of Doubt",
-      "price": 9.99,
-      "available": true
-    }, {
-      "image": "media/products/itt.jpg",
-      "title": "It Takes Two",
-      "price": 39.99,
-      "available": true
-    }, {
-      "image": "media/products/re3.png",
-      "title": "Resident Evil 3",
-      "price": 29.99,
-      "available": true
-    }, {
-      "image": "media/products/fc3.png",
-      "title": "Far Cry 3",
-      "price": 17.99,
-      "available": true
-    }, {
-      "image": "media/products/bal.png",
-      "title": "Balatro",
-      "price": 5.99,
-      "available": true
-    }, {
-      "image": "media/products/nms.png",
-      "title": "No Man's Sky",
-      "price": 49.99,
-      "available": true
-    }, {
-      "image": "media/products/ac3.png",
-      "title": "Assassin's Creed III",
-      "price": 29.99,
-      "available": true
-    }, {
-      "image": "media/products/tlou2.png",
-      "title": "The Last of Us Part II",
-      "price": 39.99,
-      "available": true
-    }, {
-      "image": "media/products/valh.png",
-      "title": "Valheim",
-      "price": 19.99,
-      "available": true
-    }, {
-      "image": "media/products/wd2.png",
-      "title": "Watch Dogs 2",
-      "price": 24.99,
-      "available": true
-    }, {
-      "image": "media/products/dvm5.png",
-      "title": "Devil May Cry 5",
-      "price": 29.99,
-      "available": true
-    }, {
-      "image": "media/products/ds3.png",
-      "title": "Dark Souls III",
-      "price": 39.99,
-      "available": true
-    }, {
-      "image": "media/products/gtav.png",
-      "title": "Grand Theft Auto V",
-      "price": 29.99,
-      "available": true
-    }, {
-      "image": "media/products/nba24.png",
-      "title": "NBA 2k24",
-      "price": 49.99,
-      "available": true
-    }, {
-      "image": "media/products/fc24.png",
-      "title": "FC 24",
-      "price": 59.99,
-      "available": true
-    }, {
-      "image": "media/products/r6.png",
-      "title": "Rainbow Six Siege",
-      "price": 19.99,
-      "available": false
-    }, {
-      "image": "media/products/hzd.png",
-      "title": "Horizon Zero Dawn",
-      "price": 49.99,
-      "available": true
+  {
+    "image": "media/products/astro.jpg",
+    "title": "Astroneer",
+    "price": 5.99,
+    "available": true,
+    "release_date": "2016-12-16",
+    "company": "System Era Softworks",
+    "description": "Astroneer is a sandbox adventure game set in space, allowing players to explore, reshape, and colonize alien worlds.",
+    "genre": ["Adventure", "Survival"],
+    "platforms": ["PC", "Xbox One", "PlayStation 4"],
+    "rating": "E for Everyone",
+    "modes": ["Single Player", "Multiplayer", "Cooperative"],
+    "languages": ["English", "French", "German", "Spanish", "Italian"],
+    "file_size": "6 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7 (64-bit)",
+            "Processor": "Dual-Core Processor, 2.4 GHz",
+            "Memory": "4 GB RAM",
+            "Graphics": "Intel HD Graphics 4400",
+            "Storage": "4 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Quad-Core Processor, 3.0 GHz",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GTX 780 / AMD Radeon R9 290",
+            "Storage": "6 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 85,
+        "users_score": 8.5
     }
-]  
+  }, {
+    "image": "media/products/f4.png",
+    "title": "Fallout 4",
+    "price": 11.99,
+    "available": true,
+    "release_date": "2015-11-10",
+    "company": "Bethesda Game Studios",
+    "description": "Fallout 4 is an action role-playing game set in a post-apocalyptic open world, featuring a vast and immersive environment to explore.",
+    "genre": ["Action", "Role-Playing"],
+    "platforms": ["PC", "PlayStation 4", "Xbox One"],
+    "rating": "Mature",
+    "modes": ["Single Player"],
+    "languages": ["English", "French", "Spanish", "German", "Italian"],
+    "file_size": "30 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7/8/10 (64-bit)",
+            "Processor": "Intel Core i5-2300 2.8 GHz / AMD Phenom II X4 945 3.0 GHz",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GTX 550 Ti 2GB / AMD Radeon HD 7870 2GB",
+            "Storage": "30 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 7/8/10 (64-bit)",
+            "Processor": "Intel Core i7 4790 3.6 GHz / AMD FX-9590 4.7 GHz",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GTX 780 3GB / AMD Radeon R9 290X 4GB",
+            "Storage": "30 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 88,
+        "users_score": 8.4
+    }
+  }, {
+    "image": "media/products/hell2.png",
+    "title": "Helldivers II",
+    "price": 39.99,
+    "available": true,
+    "release_date": "2024-02-08",
+    "company": "Arrowhead Game Studios",
+    "description": "Helldivers II is a cooperative top-down shooter game where players must work together to complete objectives in procedurally generated missions.",
+    "genre": ["Action", "Cooperative"],
+    "platforms": ["PC", "PlayStation 5", "Xbox Series X/S"],
+    "rating": "Teen",
+    "modes": ["Multiplayer", "Cooperative"],
+    "languages": ["English", "French", "German", "Spanish", "Italian"],
+    "file_size": "25 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i5-2500K 3.3 GHz / AMD FX-6300 3.5 GHz",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 960 / AMD Radeon R9 380",
+            "Storage": "25 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i7-4790 3.6 GHz / AMD Ryzen 5 1600 3.2 GHz",
+            "Memory": "16 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1060 / AMD Radeon RX 580",
+            "Storage": "25 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 90,
+        "users_score": 8.9
+    }
+  }, {
+    "image": "media/products/demo.png",
+    "title": "Demonologist",
+    "price": 7.99,
+    "available": true,
+    "release_date": "2023-03-27",
+    "company": "Clock Wizard Games",
+    "description": "Demonologist is a horror-themed action-adventure game where players take on the role of a paranormal investigator exploring haunted locations.",
+    "genre": ["Horror", "Action-Adventure"],
+    "platforms": ["PC", "PlayStation 5", "Xbox Series X/S"],
+    "rating": "Mature",
+    "modes": ["Single Player", "Multiplayer"],
+    "languages": ["English"],
+    "file_size": "15 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i5-4460 3.2 GHz / AMD Ryzen 3 1200 3.1 GHz",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 960 / AMD Radeon R9 380",
+            "Storage": "15 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i7-6700K 4.0 GHz / AMD Ryzen 5 1600X 3.6 GHz",
+            "Memory": "16 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1070 / AMD Radeon RX Vega 56",
+            "Storage": "15 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 82,
+        "users_score": 8.2
+    }
+  }, {
+    "image": "media/products/re7.png",
+    "title": "Resident Evil 7",
+    "price": 19.99,
+    "available": true,
+    "release_date": "2017-01-24",
+    "company": "Capcom",
+    "description": "Resident Evil 7 is a survival horror game set in a derelict plantation mansion, offering a terrifying first-person experience.",
+    "genre": ["Horror", "Survival"],
+    "platforms": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch"],
+    "rating": "Mature",
+    "modes": ["Single Player"],
+    "languages": ["English", "Japanese", "French", "German", "Spanish"],
+    "file_size": "25 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7/8/8.1/10 (64-bit)",
+            "Processor": "Intel Core i5-4460 2.7 GHz / AMD FX-6300",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 760 / AMD Radeon R7 260x",
+            "Storage": "24 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 7/8/8.1/10 (64-bit)",
+            "Processor": "Intel Core i7 3770 3.4 GHz / AMD FX-9590 4.7 GHz",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1060 / AMD Radeon RX 480",
+            "Storage": "24 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 86,
+        "users_score": 8.6
+    }
+  }, {
+    "image": "media/products/b4b.png",
+    "title": "Back 4 Blood",
+    "price": 29.99,
+    "available": true,
+    "release_date": "2021-10-12",
+    "company": "Turtle Rock Studios",
+    "description": "Back 4 Blood is a cooperative first-person shooter where players fight against hordes of zombies in intense, adrenaline-fueled battles.",
+    "genre": ["Action", "Horror"],
+    "platforms": ["PC", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X/S"],
+    "rating": "Mature",
+    "modes": ["Single Player", "Multiplayer", "Cooperative"],
+    "languages": ["English", "French", "German", "Spanish", "Italian"],
+    "file_size": "50 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i5-8500 / AMD Ryzen 5 1600",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 770 / AMD Radeon RX 580",
+            "Storage": "50 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i7-7700 / AMD Ryzen 7 1800X",
+            "Memory": "16 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1060 / AMD Radeon RX 590",
+            "Storage": "50 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 82,
+        "users_score": 8.3
+    }
+  }, {
+    "image": "media/products/rdr2.png",
+    "title": "Red Dead Redemption 2",
+    "price": 69.99,
+    "available": true,
+    "release_date": "2018-10-26",
+    "company": "Rockstar Games",
+    "description": "Red Dead Redemption 2 is an epic tale of life in America's unforgiving heartland, offering a vast and atmospheric world to explore with captivating characters and a rich storyline.",
+    "genre": ["Action-Adventure", "Open World"],
+    "platforms": ["PlayStation 4", "Xbox One", "PC", "Google Stadia"],
+    "rating": "Mature",
+    "modes": ["Single Player", "Multiplayer"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "150 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7 (64-bit)",
+            "Processor": "Intel Core i5-2500K / AMD FX-6300",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 770 2GB / AMD Radeon R9 280 3GB",
+            "Storage": "150 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i7-4770K / AMD Ryzen 5 1500X",
+            "Memory": "12 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB",
+            "Storage": "150 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 97,
+        "users_score": 9.2
+    }
+  }, {
+    "image": "media/products/bg3.png",
+    "title": "Baldur's Gate 3",
+    "price": 34.99,
+    "available": true,
+    "release_date": "2023-08-03",
+    "company": "Larian Studios",
+    "description": "Baldur's Gate 3 is a role-playing video game that takes place in the Forgotten Realms, where players embark on an epic journey filled with intrigue, combat, and exploration.",
+    "genre": ["RPG", "Fantasy"],
+    "platforms": ["PC", "Google Stadia"],
+    "rating": "Mature",
+    "modes": ["Single Player", "Multiplayer"],
+    "languages": ["English", "French", "German", "Spanish", "Russian"],
+    "file_size": "70 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7 (64-bit)",
+            "Processor": "Intel Core i5-4690 / AMD FX 4350",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 780 / AMD Radeon R9 280X",
+            "Storage": "70 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i7-4770K / AMD Ryzen 5 1500X",
+            "Memory": "16 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1060 6GB / AMD Radeon RX 580",
+            "Storage": "70 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 89,
+        "users_score": 8.9
+    }
+  }, {
+    "image": "media/products/fc5.png",
+    "title": "Far Cry 5",
+    "price": 47.99,
+    "available": false,
+    "release_date": "2018-03-27",
+    "company": "Ubisoft",
+    "description": "Far Cry 5 is an action-packed first-person shooter set in Hope County, Montana, where players must confront a fanatical doomsday cult known as the Project at Eden's Gate.",
+    "genre": ["Action", "Open World"],
+    "platforms": ["PC", "PlayStation 4", "Xbox One"],
+    "rating": "Mature",
+    "modes": ["Single Player", "Multiplayer", "Cooperative"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "40 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7 (64-bit)",
+            "Processor": "Intel Core i5-2400 / AMD FX-6300",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 670 / AMD R9 270",
+            "Storage": "40 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i7-4770 / AMD Ryzen 5 1600",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 970 / AMD R9 290X",
+            "Storage": "40 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 82,
+        "users_score": 8.0
+    }
+  }, {
+    "image": "media/products/re2.png",
+    "title": "Resident Evil 2",
+    "price": 29.99,
+    "available": true,
+    "release_date": "2019-01-25",
+    "company": "Capcom",
+    "description": "Resident Evil 2 is a survival horror game set in Raccoon City, where players must navigate through zombie-infested areas while solving puzzles and uncovering the truth behind the outbreak.",
+    "genre": ["Horror", "Survival"],
+    "platforms": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch"],
+    "rating": "Mature",
+    "modes": ["Single Player"],
+    "languages": ["English", "Japanese", "French", "German", "Spanish"],
+    "file_size": "26 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7/8/8.1/10 (64-bit)",
+            "Processor": "Intel Core i5-4460 / AMD FX-6300",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 760 / AMD Radeon R7 260X",
+            "Storage": "26 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 7/8/8.1/10 (64-bit)",
+            "Processor": "Intel Core i7-3770 / AMD FX-9590",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1060 / AMD Radeon RX 480",
+            "Storage": "26 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 91,
+        "users_score": 9.0
+    }
+  }, {
+    "image": "media/products/tma.png",
+    "title": "The Mortuary Assistant",
+    "price": 12.49,
+    "available": true,
+    "release_date": "2022-08-02",
+    "company": "DarkStone Digital",
+    "description": "The Mortuary Assistant is a narrative-driven adventure game where players take on the role of a mortician's assistant, exploring the mysteries of a small-town mortuary while uncovering dark secrets.",
+    "genre": ["Adventure", "Horror"],
+    "platforms": ["PC"],
+    "rating": "Teen",
+    "modes": ["Single Player"],
+    "languages": ["English"],
+    "file_size": "2 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7 (64-bit)",
+            "Processor": "Intel Core i3-2100 / AMD FX-6300",
+            "Memory": "4 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 750 Ti / AMD Radeon R7 260X",
+            "Storage": "2 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i5-8400 / AMD Ryzen 5 2600",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1060 / AMD Radeon RX 580",
+            "Storage": "2 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 78,
+        "users_score": 7.5
+    }
+  }, {
+    "image": "media/products/fnv.png",
+    "title": "Fallout: New Vegas",
+    "price": 5.99,
+    "available": true,
+    "release_date": "2010-10-19",
+    "company": "Obsidian Entertainment",
+    "description": "Fallout: New Vegas is an action RPG set in a post-apocalyptic world, where players navigate through the Mojave Wasteland, encountering factions, creatures, and making choices that shape the fate of the region.",
+    "genre": ["Action", "RPG"],
+    "platforms": ["PC", "PlayStation 3", "Xbox 360"],
+    "rating": "Mature",
+    "modes": ["Single Player"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "10 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows XP/Vista/7",
+            "Processor": "Dual Core 2.0 GHz",
+            "Memory": "2 GB RAM",
+            "Graphics": "NVIDIA GeForce 6 series / ATI 1300XT series",
+            "Storage": "10 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 7/Vista/XP",
+            "Processor": "Dual Core 2.0 GHz",
+            "Memory": "2 GB RAM",
+            "Graphics": "NVIDIA GeForce 6 series / ATI 1300XT series",
+            "Storage": "10 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 84,
+        "users_score": 8.5
+    }
+  }, {
+    "image": "media/products/hl.png",
+    "title": "Hogwarts Legacy",
+    "price": 29.99,
+    "available": true,
+    "release_date": "2023-02-10",
+    "company": "Portkey Games",
+    "description": "Hogwarts Legacy is an action RPG set in the wizarding world of Harry Potter, where players embark on a journey as a student at Hogwarts School of Witchcraft and Wizardry, exploring a vast open-world, mastering spells, and uncovering the secrets of the wizarding world.",
+    "genre": ["Action", "RPG"],
+    "platforms": ["PC", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X/S"],
+    "rating": "Teen",
+    "modes": ["Single Player"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "60 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i5-2500K / AMD FX-6300",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 760 / AMD Radeon HD 7950",
+            "Storage": "60 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i7-6700K / AMD Ryzen 5 1600",
+            "Memory": "16 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1060 / AMD Radeon RX 580",
+            "Storage": "60 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 85,
+        "users_score": 8.3
+    }
+  }, {
+    "image": "media/products/c2077.png",
+    "title": "Cyberpunk 2077",
+    "price": 44.99,
+    "available": true,
+    "release_date": "2020-12-10",
+    "company": "CD Projekt Red",
+    "description": "Cyberpunk 2077 is an open-world action RPG set in the futuristic Night City, where players take on the role of V, a mercenary outlaw, navigating through the dangerous streets, encountering diverse characters, and shaping the story through their choices.",
+    "genre": ["Action", "RPG"],
+    "platforms": ["PC", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X/S", "Google Stadia"],
+    "rating": "Mature",
+    "modes": ["Single Player"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "70 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7 (64-bit)",
+            "Processor": "Intel Core i5-3570K / AMD FX-8310",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 780 / AMD Radeon RX 470",
+            "Storage": "70 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i7-4790 / AMD Ryzen 3 3200G",
+            "Memory": "12 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1060 / AMD Radeon RX 590",
+            "Storage": "70 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 87,
+        "users_score": 7.8
+    }
+  }, {
+    "image": "media/products/f76.png",
+    "title": "Fallout 76",
+    "price": 4.79,
+    "available": true,
+    "release_date": "2018-11-14",
+    "company": "Bethesda Game Studios",
+    "description": "Fallout 76 is an online multiplayer action RPG set in the Fallout universe, where players emerge from the Vault 76 and explore the wasteland of West Virginia, encountering other survivors, building settlements, and battling mutated creatures.",
+    "genre": ["Action", "RPG", "Online"],
+    "platforms": ["PC", "PlayStation 4", "Xbox One"],
+    "rating": "Mature",
+    "modes": ["Multiplayer"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "50 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7/8/10 (64-bit)",
+            "Processor": "Intel Core i5-6600K / AMD Ryzen 3 2200G",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GTX 780 / AMD Radeon R9 285",
+            "Storage": "50 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 7/8/10 (64-bit)",
+            "Processor": "Intel Core i7-4790 / AMD Ryzen 5 1500X",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GTX 970 / AMD RX 480",
+            "Storage": "50 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 60,
+        "users_score": 5.0
+    }
+  }, {
+    "image": "media/products/hs.png",
+    "title": "Hunt: Showdown",
+    "price": 18.99,
+    "available": true,
+    "release_date": "2019-08-27",
+    "company": "Crytek",
+    "description": "Hunt: Showdown is a competitive first-person shooter with elements of PvE and PvP gameplay, set in the late 1800s where players take on the role of bounty hunters tracking down monstrous creatures in a dark and atmospheric world.",
+    "genre": ["First-Person Shooter", "Horror"],
+    "platforms": ["PC", "PlayStation 4", "Xbox One"],
+    "rating": "Mature",
+    "modes": ["Multiplayer"],
+    "languages": ["English", "French", "German", "Spanish", "Russian"],
+    "file_size": "20 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7/8/10 (64-bit)",
+            "Processor": "Intel i5-6400 / AMD Ryzen 5 1400",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 960 / AMD Radeon HD 7750",
+            "Storage": "20 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel i7-4770K / AMD Ryzen 5 1600",
+            "Memory": "16 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 970 / AMD Radeon R9 390X",
+            "Storage": "20 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 80,
+        "users_score": 8.2
+    }
+  }, {
+    "image": "media/products/re4-2005.png",
+    "title": "Resident Evil 4 (2005)",
+    "price": 29.99,
+    "available": true,
+    "release_date": "2005-01-11",
+    "company": "Capcom",
+    "description": "Resident Evil 4 is a survival horror game that follows Leon S. Kennedy as he investigates the mysterious disappearance of the President's daughter in a remote European village, encountering terrifying creatures and uncovering a sinister plot.",
+    "genre": ["Survival Horror", "Action"],
+    "platforms": ["PC", "PlayStation 2", "GameCube", "Wii", "PlayStation 3", "Xbox 360", "PlayStation 4", "Xbox One"],
+    "rating": "Mature",
+    "modes": ["Single Player"],
+    "languages": ["English", "Japanese", "Spanish", "French", "German", "Italian"],
+    "file_size": "2 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows XP/ Vista",
+            "Processor": "1.4 GHz Pentium 4 or AMD Athlon",
+            "Memory": "256 MB RAM",
+            "Graphics": "128 MB DirectX 9.0c-compliant AGP / PCI Express graphics card",
+            "Storage": "7 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows XP/ Vista",
+            "Processor": "2.4 GHz Pentium 4 or AMD Athlon",
+            "Memory": "512 MB RAM",
+            "Graphics": "256 MB DirectX 9.0c-compliant AGP / PCI Express graphics card",
+            "Storage": "7 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 96,
+        "users_score": 9.0
+    }
+  }, {
+    "image": "media/products/sotf.png",
+    "title": "Sons Of The Forest",
+    "price": 14.99,
+    "available": true,
+    "release_date": "2023-02-23",
+    "company": "Endnight Games",
+    "description": "Sons of the Forest is a survival horror game, sequel to The Forest, where players find themselves in a mysterious forest inhabited by hostile mutants, and must scavenge for resources, build shelter, and uncover the dark secrets of the island.",
+    "genre": ["Survival Horror", "Action"],
+    "platforms": ["PC"],
+    "rating": "Mature",
+    "modes": ["Single Player", "Multiplayer"],
+    "languages": ["English", "French", "German", "Spanish"],
+    "file_size": "15 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i5-7500 / AMD Ryzen 5 1600",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 760 / AMD Radeon R9 380X",
+            "Storage": "30 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i7-8700K / AMD Ryzen 5 3600",
+            "Memory": "16 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1070 / AMD Radeon RX Vega 56",
+            "Storage": "30 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 85,
+        "users_score": 8.5
+    }
+  }, {
+    "image": "media/products/fc6.png",
+    "title": "Far Cry 6",
+    "price": 47.99,
+    "available": true,
+    "release_date": "2021-10-07",
+    "company": "Ubisoft",
+    "description": "Far Cry 6 is an open-world first-person shooter set on the fictional Caribbean island of Yara, ruled by a brutal dictator, where players join the guerrilla uprising to liberate the nation and ignite a revolution.",
+    "genre": ["First-Person Shooter", "Action", "Adventure"],
+    "platforms": ["PC", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X/S"],
+    "rating": "Mature",
+    "modes": ["Single Player"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "50 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i5-4460 / AMD Ryzen 3 1200",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 970 / AMD Radeon R9 380",
+            "Storage": "60 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i7-9700K / AMD Ryzen 5 3600X",
+            "Memory": "16 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1080 / AMD Radeon RX 5700 XT",
+            "Storage": "60 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 80,
+        "users_score": 7.9
+    }
+  }, {
+    "image": "media/products/dbh.png",
+    "title": "Detroit: Become Human",
+    "price": 31.99,
+    "available": true,
+    "release_date": "2018-05-25",
+    "company": "Quantic Dream",
+    "description": "Detroit: Become Human is an interactive drama game set in a futuristic Detroit where players control three android characters, each with their own storylines and choices that affect the outcome of the narrative.",
+    "genre": ["Interactive Drama", "Adventure"],
+    "platforms": ["PlayStation 4", "PlayStation 5", "PC"],
+    "rating": "Mature",
+    "modes": ["Single Player"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "52 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i5-2400 / AMD Ryzen 3 1200",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 660 / AMD Radeon HD 7870",
+            "Storage": "55 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i7-2700K / AMD Ryzen 5 1600",
+            "Memory": "12 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1080 / AMD Radeon RX Vega 64",
+            "Storage": "55 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 88,
+        "users_score": 8.7
+    }
+  }, {
+    "image": "media/products/re4.png",
+    "title": "Resident Evil 4",
+    "price": 29.99,
+    "available": true,
+    "release_date": "2023-03-24",
+    "company": "Capcom",
+    "description": "Resident Evil 4 is a survival horror game set in a rural village in Europe where the player controls Leon S. Kennedy, a former police officer, as he battles hordes of infected villagers and cultists while trying to rescue the President's daughter.",
+    "genre": ["Survival Horror", "Action"],
+    "platforms": ["PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X/S", "PC"],
+    "rating": "Mature",
+    "modes": ["Single Player"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "15 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i5-4460 / AMD FX-6300",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 760 / AMD Radeon R7 260X",
+            "Storage": "30 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i7-3770 / AMD FX-9590",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1060 / AMD Radeon RX 480",
+            "Storage": "30 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 91,
+        "users_score": 9.0
+    }
+  }, {
+    "image": "media/products/doom-e.png",
+    "title": "DOOM Eternal",
+    "price": 23.99,
+    "available": true,
+    "release_date": "2020-03-20",
+    "company": "id Software",
+    "description": "DOOM Eternal is a first-person shooter game and the direct sequel to DOOM (2016). Players assume the role of the Doom Slayer, an ancient warrior, and battle against demonic forces from Hell across various dimensions to save humanity.",
+    "genre": ["First-Person Shooter", "Action"],
+    "platforms": ["PlayStation 4", "Xbox One", "PC", "Nintendo Switch", "Google Stadia"],
+    "rating": "Mature",
+    "modes": ["Single Player", "Multiplayer"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "50 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7 (64-bit)",
+            "Processor": "Intel Core i5 @ 3.3 GHz / AMD Ryzen 3 @ 3.1 GHz",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 970 (4GB) / AMD Radeon R9 290 (4GB)",
+            "Storage": "50 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i7-6700K / AMD Ryzen 7 1800X",
+            "Memory": "16 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1080 (8GB) / AMD Radeon RX Vega 64 (8GB)",
+            "Storage": "50 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 88,
+        "users_score": 8.7
+    }
+  }, {
+    "image": "media/products/pz.png",
+    "title": "Project Zomboid",
+    "price": 10.49,
+    "available": false,
+    "release_date": "2013-11-08",
+    "company": "The Indie Stone",
+    "description": "Project Zomboid is a survival sandbox game set in a post-apocalyptic world overrun by zombies. Players must scavenge for supplies, build shelter, and manage their character's needs to survive for as long as possible.",
+    "genre": ["Survival", "Indie"],
+    "platforms": ["PC"],
+    "rating": "Mature",
+    "modes": ["Single Player", "Multiplayer"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "2 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows XP, Vista, 7, 8, 10",
+            "Processor": "Intel Dual-Core 2.77 GHz / AMD Dual-Core Athlon 2.7 GHz",
+            "Memory": "2 GB RAM",
+            "Graphics": "Integrated graphics (512MB VRAM)",
+            "Storage": "500 MB available space"
+        },
+        "recommended": {
+            "OS": "Windows 7, 10",
+            "Processor": "Intel Core 2 Duo 3.20 GHz / AMD Athlon II X4 3.20 GHz",
+            "Memory": "4 GB RAM",
+            "Graphics": "Dedicated graphics (1GB VRAM)",
+            "Storage": "1 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 82,
+        "users_score": 8.0
+    }
+  }, {
+    "image": "media/products/metro-e.png",
+    "title": "Metro Exodus",
+    "price": 22.99,
+    "available": true,
+    "release_date": "2019-02-15",
+    "company": "4A Games",
+    "description": "Metro Exodus is a first-person shooter game and the third installment in the Metro video game series, based on the novels by Dmitry Glukhovsky. Set in a post-apocalyptic Russia, players navigate through hostile environments, encountering mutated creatures and hostile factions.",
+    "genre": ["First-Person Shooter", "Survival"],
+    "platforms": ["PlayStation 4", "Xbox One", "PC"],
+    "rating": "Mature",
+    "modes": ["Single Player"],
+    "languages": ["English", "Russian"],
+    "file_size": "50 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7/8/10",
+            "Processor": "Intel Core i5-4440 / AMD FX-8370",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 670 / AMD Radeon HD 7870",
+            "Storage": "59 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10",
+            "Processor": "Intel Core i7-4770K / AMD Ryzen 5 1500X",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1070 / AMD Radeon RX Vega 56",
+            "Storage": "59 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 83,
+        "users_score": 8.2
+    }
+}, {
+    "image": "media/products/sod.png",
+    "title": "Shadows of Doubt",
+    "price": 9.99,
+    "available": true,
+    "release_date": "2023-04-24",
+    "company": "ColePowered Games",
+    "description": "Shadows of Doubt is an open-world detective game where players investigate crimes in a procedurally generated city. Set in a noir-inspired universe, the game features a dynamic day-night cycle and a deep narrative where the player must uncover clues and solve mysteries.",
+    "genre": ["Open World", "Detective"],
+    "platforms": ["PC"],
+    "rating": "Pending",
+    "modes": ["Single Player"],
+    "languages": ["English"],
+    "file_size": "Pending",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7/8/10 (64-bit)",
+            "Processor": "Intel Core i5-4460 / AMD FX-6300",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 760 / AMD Radeon R9 270",
+            "Storage": "20 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i7-4770K / AMD Ryzen 5 2600",
+            "Memory": "16 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1060 / AMD Radeon RX 580",
+            "Storage": "20 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": "Pending",
+        "users_score": "Pending"
+    }
+  }, {
+    "image": "media/products/itt.jpg",
+    "title": "It Takes Two",
+    "price": 39.99,
+    "available": true,
+    "release_date": "2021-03-26",
+    "company": "Hazelight Studios",
+    "description": "It Takes Two is a cooperative action-adventure platformer game where players control two characters, Cody and May, a couple on the brink of divorce transformed into dolls. Working together, they navigate through various levels and challenges, each with unique gameplay mechanics.",
+    "genre": ["Co-op", "Platformer"],
+    "platforms": ["PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X/S", "PC"],
+    "rating": "Teen",
+    "modes": ["Co-op"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "40 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 8.1/10 (64-bit)",
+            "Processor": "AMD FX 6100 / Intel Core i3-2100T",
+            "Memory": "8 GB RAM",
+            "Graphics": "AMD R7 260X / NVIDIA GTX 660",
+            "Storage": "50 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 8.1/10 (64-bit)",
+            "Processor": "AMD Ryzen 3 1300X / Intel Core i5 3570K",
+            "Memory": "16 GB RAM",
+            "Graphics": "AMD R9 290X / Nvidia GTX 970",
+            "Storage": "50 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 89,
+        "users_score": 9.0
+    }
+  }, {
+    "image": "media/products/re3.png",
+    "title": "Resident Evil 3",
+    "price": 29.99,
+    "available": true,
+    "release_date": "2020-04-03",
+    "company": "Capcom",
+    "description": "Resident Evil 3 is a survival horror game and a remake of the 1999 title Resident Evil 3: Nemesis. Players control Jill Valentine as she attempts to escape Raccoon City during a zombie apocalypse while being pursued by the intelligent bioweapon, Nemesis.",
+    "genre": ["Survival Horror"],
+    "platforms": ["PlayStation 4", "Xbox One", "PC"],
+    "rating": "Mature",
+    "modes": ["Single Player"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "24 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7/8.1/10 (64-bit)",
+            "Processor": "Intel Core i5-4460 / AMD FX-6300",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 760 / AMD Radeon R7 260x",
+            "Storage": "45 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "Intel Core i7-3770 / AMD FX-9590",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1060 / AMD Radeon RX 480",
+            "Storage": "45 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 80,
+        "users_score": 8.1
+    }
+  }, {
+    "image": "media/products/fc3.png",
+    "title": "Far Cry 3",
+    "price": 17.99,
+    "available": true,
+    "release_date": "2012-11-29",
+    "company": "Ubisoft",
+    "description": "Far Cry 3 is an open-world first-person shooter set on a tropical island. Players assume the role of Jason Brody, a young man stranded on the island, as he fights his way through hostile mercenaries and wildlife to rescue his friends and escape the island.",
+    "genre": ["Action", "Adventure"],
+    "platforms": ["PlayStation 3", "Xbox 360", "PC"],
+    "rating": "Mature",
+    "modes": ["Single Player", "Multiplayer"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "6.53 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows XP/Vista/7",
+            "Processor": "Intel Core2 Duo E6700 / AMD Athlon64 X2 6000+",
+            "Memory": "2 GB RAM",
+            "Graphics": "NVIDIA GeForce 8800 GTX / AMD Radeon HD 2900 XT",
+            "Storage": "15 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 7",
+            "Processor": "Intel Core i3-530 / AMD Phenom II X2 565",
+            "Memory": "4 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 480 / AMD Radeon HD 5770",
+            "Storage": "15 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 88,
+        "users_score": 8.3
+    }
+  }, {
+    "image": "media/products/bal.png",
+    "title": "Balatro",
+    "price": 5.99,
+    "available": true,
+    "release_date": "2023-09-13",
+    "company": "Aether Interactive",
+    "description": "The poker roguelike. Balatro is a mesmerizing and brilliant deck-builder where you can play illegal poker hands, discover wildcards that will change your games, and activate impressive combos that will get your adrenaline pumping.",
+    "genre": ["Adventure", "Indie"],
+    "platforms": ["PC"],
+    "rating": "Teen",
+    "modes": ["Single Player"],
+    "languages": ["English"],
+    "file_size": "Pending",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7/8/10",
+            "Processor": "Intel Core i5-2300 / AMD FX-4350",
+            "Memory": "4 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 560 / AMD Radeon HD 7850",
+            "Storage": "10 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10",
+            "Processor": "Intel Core i5-3470 / AMD Ryzen 3 1200",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 960 / AMD Radeon R9 280X",
+            "Storage": "10 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": "Pending",
+        "users_score": "Pending"
+    }
+  }, {
+    "image": "media/products/nms.png",
+    "title": "No Man's Sky",
+    "price": 49.99,
+    "available": true,
+    "release_date": "2016-08-09",
+    "company": "Hello Games",
+    "description": "No Man's Sky is a procedurally generated open-world game set in a vast universe. Players explore planets, gather resources, and engage in space combat, trading, and exploration. The game features multiplayer, allowing players to explore the universe together.",
+    "genre": ["Open World", "Survival"],
+    "platforms": ["PlayStation 4", "Xbox One", "PC"],
+    "rating": "Teen",
+    "modes": ["Single Player", "Multiplayer"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "10 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7/8.1/10 (64-bit)",
+            "Processor": "Intel Core i3",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GTX 480 / AMD Radeon 7870",
+            "Storage": "10 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 7/8.1/10 (64-bit)",
+            "Processor": "Intel Core i7",
+            "Memory": "16 GB RAM",
+            "Graphics": "NVIDIA GTX 980",
+            "Storage": "10 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 71,
+        "users_score": 6.3
+    }
+  }, {
+    "image": "media/products/ac3.png",
+    "title": "Assassin's Creed III",
+    "price": 29.99,
+    "available": true,
+    "release_date": "2012-10-30",
+    "company": "Ubisoft",
+    "description": "Assassin's Creed III is an action-adventure game set during the American Revolution. Players take on the role of Connor, a Native American assassin fighting against the Templars. The game features a vast open world, naval combat, and a compelling narrative.",
+    "genre": ["Action", "Adventure"],
+    "platforms": ["PlayStation 3", "Xbox 360", "PC"],
+    "rating": "Mature",
+    "modes": ["Single Player", "Multiplayer"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "17 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows Vista/7/8",
+            "Processor": "Intel Core2 Duo E8200 / AMD Athlon II X4 620",
+            "Memory": "2 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 260 / AMD Radeon HD 4870",
+            "Storage": "17 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 7/8",
+            "Processor": "Intel Core2 Quad Q9400 / AMD Phenom II X4 940",
+            "Memory": "4 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 580 / AMD Radeon HD 6870",
+            "Storage": "17 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 84,
+        "users_score": 7.3
+    }
+  }, {
+    "image": "media/products/valh.png",
+    "title": "Valheim",
+    "price": 19.99,
+    "available": true,
+    "release_date": "2021-02-02",
+    "company": "Iron Gate Studio",
+    "description": "Valheim is a survival game set in a procedurally generated world inspired by Norse mythology. Players must gather resources, build shelters, and craft weapons to survive against various enemies and bosses. With its open-world exploration and cooperative multiplayer, Valheim offers a challenging and immersive experience for players.",
+    "genre": ["Survival", "Indie"],
+    "platforms": ["PC"],
+    "rating": "Teen",
+    "modes": ["Single Player", "Multiplayer"],
+    "languages": ["English"],
+    "file_size": "1 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7/8/10 (64-bit)",
+            "Processor": "2.6 GHz Dual Core",
+            "Memory": "4 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 500 / AMD Radeon HD 7000",
+            "Storage": "1 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit)",
+            "Processor": "3 GHz Quad Core",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 900 / AMD Radeon RX 500",
+            "Storage": "2 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 83,
+        "users_score": 8.2
+    }
+  }, {
+    "image": "media/products/wd2.png",
+    "title": "Watch Dogs 2",
+    "price": 24.99,
+    "available": true,
+    "release_date": "2016-11-15",
+    "company": "Ubisoft",
+    "description": "Watch Dogs 2 is an open-world action-adventure game developed by Ubisoft. Set in a fictionalized version of the San Francisco Bay Area, players control Marcus Holloway, a hacker who works with the hacking group DedSec to take down the city's surveillance system. With its emphasis on hacking and exploration, Watch Dogs 2 offers a unique gameplay experience.",
+    "genre": ["Action", "Adventure"],
+    "platforms": ["PlayStation 4", "Xbox One", "PC"],
+    "rating": "Mature",
+    "modes": ["Single Player", "Multiplayer"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "50 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7 SP1/8.1/10 (64-bit)",
+            "Processor": "Intel Core i5-2400S / AMD FX 6120",
+            "Memory": "6 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 660 / AMD Radeon HD 7870",
+            "Storage": "50 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 7 SP1/8.1/10 (64-bit)",
+            "Processor": "Intel Core i5-3470 / AMD FX 8120",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 780 / AMD Radeon R9 290X",
+            "Storage": "50 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 82,
+        "users_score": 7.6
+    }
+  }, {
+    "image": "media/products/dvm5.png",
+    "title": "Devil May Cry 5",
+    "price": 29.99,
+    "available": true,
+    "release_date": "2019-03-08",
+    "company": "Capcom",
+    "description": "Devil May Cry 5 is a stylish action game developed by Capcom. Players control three characters—Dante, Nero, and newcomer V—as they battle demons in a fictional city. With its fast-paced combat, impressive visuals, and rock-solid gameplay, Devil May Cry 5 is a must-play for fans of the series.",
+    "genre": ["Action"],
+    "platforms": ["PlayStation 4", "Xbox One", "PC"],
+    "rating": "Mature",
+    "modes": ["Single Player"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "37 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7 (64-bit)",
+            "Processor": "Intel Core i5-4460 / AMD FX-6300",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 760 / AMD Radeon R7 260x",
+            "Storage": "35 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 7 (64-bit)",
+            "Processor": "Intel Core i7-3770 / AMD FX-9590",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1060 / AMD Radeon RX 480",
+            "Storage": "35 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 88,
+        "users_score": 8.5
+    }
+  }, {
+    "image": "media/products/ds3.png",
+    "title": "Dark Souls III",
+    "price": 39.99,
+    "available": true,
+    "release_date": "2016-03-24",
+    "company": "FromSoftware",
+    "description": "Dark Souls III is an action role-playing game developed by FromSoftware. Set in a dark fantasy world, players embark on a challenging journey to defeat powerful enemies and bosses. With its intricate level design, deep combat mechanics, and atmospheric storytelling, Dark Souls III offers a rewarding experience for players seeking a tough but rewarding challenge.",
+    "genre": ["Action", "RPG"],
+    "platforms": ["PlayStation 4", "Xbox One", "PC"],
+    "rating": "Mature",
+    "modes": ["Single Player", "Multiplayer"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "25 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7 SP1 64-bit, Windows 8.1 64-bit, Windows 10 64-bit",
+            "Processor": "Intel Core i3-2100 / AMD FX-6300",
+            "Memory": "4 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 750 Ti / ATI Radeon HD 7950",
+            "Storage": "25 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 7 SP1 64-bit, Windows 8.1 64-bit, Windows 10 64-bit",
+            "Processor": "Intel Core i7-3770 / AMD FX-8350",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 970 / ATI Radeon R9 series",
+            "Storage": "25 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 89,
+        "users_score": 8.8
+    }
+  }, {
+    "image": "media/products/gtav.png",
+    "title": "Grand Theft Auto V",
+    "price": 29.99,
+    "available": true,
+    "release_date": "2013-09-17",
+    "company": "Rockstar Games",
+    "description": "Grand Theft Auto V is an open-world action-adventure game developed by Rockstar Games. Set in the fictional state of San Andreas, players follow the lives of three criminals as they plan and execute a series of heists. With its expansive open world, engaging story, and multiplayer mode, Grand Theft Auto V remains one of the most popular and successful games of all time.",
+    "genre": ["Action", "Adventure"],
+    "platforms": ["PlayStation 3", "PlayStation 4", "Xbox 360", "Xbox One", "PC"],
+    "rating": "Mature",
+    "modes": ["Single Player", "Multiplayer"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "72 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7 64-bit, Windows 8.1 64-bit, Windows 10 64-bit",
+            "Processor": "Intel Core 2 Quad CPU Q6600 @ 2.40GHz / AMD Phenom 9850 Quad-Core Processor @ 2.5GHz",
+            "Memory": "4 GB RAM",
+            "Graphics": "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB (DX 10, 10.1, 11)",
+            "Storage": "72 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 7 64-bit, Windows 8.1 64-bit, Windows 10 64-bit",
+            "Processor": "Intel Core i5 3470 @ 3.2GHz / AMD X8 FX-8350 @ 4GHz",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
+            "Storage": "72 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 96,
+        "users_score": 8.3
+    }
+  }, {
+    "image": "media/products/nba24.png",
+    "title": "NBA 2k24",
+    "price": 49.99,
+    "available": true,
+    "release_date": "2023-09-08",
+    "company": "Visual Concepts",
+    "description": "NBA 2K24 is a basketball simulation game developed by Visual Concepts. Offering realistic gameplay and stunning graphics, NBA 2K24 allows players to experience the excitement of professional basketball. With its extensive career mode, online multiplayer, and immersive presentation, NBA 2K24 is a must-have for basketball fans.",
+    "genre": ["Sports"],
+    "platforms": ["PlayStation 5", "Xbox Series X/S", "PC"],
+    "rating": "Everyone",
+    "modes": ["Single Player", "Multiplayer"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "100 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 10 64-bit",
+            "Processor": "Intel Core i3-2100 / AMD FX-4100",
+            "Memory": "4 GB RAM",
+            "Graphics": "NVIDIA GeForce GT 450 / AMD Radeon HD 7770",
+            "Storage": "100 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 64-bit",
+            "Processor": "Intel Core i5-4430 / AMD FX-8370",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 770 / AMD Radeon R9 270",
+            "Storage": "100 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 88,
+        "users_score": 7.9
+    }
+  }, {
+    "image": "media/products/r6.png",
+    "title": "Rainbow Six Siege",
+    "price": 19.99,
+    "available": false,
+    "release_date": "2015-12-01",
+    "company": "Ubisoft",
+    "description": "Rainbow Six Siege is a tactical first-person shooter developed by Ubisoft. Set in various locations around the world, players engage in intense close-quarters combat between attackers and defenders. With its emphasis on strategy, teamwork, and destructible environments, Rainbow Six Siege offers a unique and challenging multiplayer experience.",
+    "genre": ["Action", "Tactical Shooter"],
+    "platforms": ["PlayStation 4", "Xbox One", "PC"],
+    "rating": "Mature",
+    "modes": ["Multiplayer"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "50 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 7, Windows 8.1, Windows 10 (64-bit versions required)",
+            "Processor": "Intel Core i3 560 @ 3.3 GHz / AMD Phenom II X4 945 @ 3.0 GHz",
+            "Memory": "6 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 460 / AMD Radeon HD 5870",
+            "Storage": "61 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 7 SP1, Windows 8.1, Windows 10 (64-bit versions required)",
+            "Processor": "Intel Core i5-2500K @ 3.3 GHz / AMD FX-8120 @ 3.1 GHz",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 670 / AMD Radeon HD 7970 / R9 280X",
+            "Storage": "61 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 81,
+        "users_score": 7.8
+    }
+  }, {
+    "image": "media/products/hzd.png",
+    "title": "Horizon Zero Dawn",
+    "price": 49.99,
+    "available": true,
+    "release_date": "2017-02-28",
+    "company": "Guerrilla Games",
+    "description": "Horizon Zero Dawn is an action role-playing game developed by Guerrilla Games. Set in a post-apocalyptic world where robotic creatures roam the earth, players control Aloy, a hunter, as she navigates through various landscapes and uncovers the mysteries of her past. With its breathtaking visuals, engaging story, and satisfying combat, Horizon Zero Dawn offers an unforgettable gaming experience.",
+    "genre": ["Action", "Adventure", "RPG"],
+    "platforms": ["PlayStation 4", "PC"],
+    "rating": "Teen",
+    "modes": ["Single Player"],
+    "languages": ["English", "French", "Italian", "German", "Spanish"],
+    "file_size": "70 GB",
+    "system_requirements": {
+        "minimum": {
+            "OS": "Windows 10 (64-bit versions required)",
+            "Processor": "Intel Core i5-2500K @ 3.3 GHz / AMD FX 6300 @ 3.5 GHz",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 780 (3GB) / AMD Radeon R9 290 (4GB)",
+            "Storage": "100 GB available space"
+        },
+        "recommended": {
+            "OS": "Windows 10 (64-bit versions required)",
+            "Processor": "Intel Core i7-4770K @ 3.5 GHz / Ryzen 5 1500X @ 3.5 GHz",
+            "Memory": "16 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1060 (6GB) / AMD Radeon RX 580 (8GB)",
+            "Storage": "100 GB available space"
+        }
+    },
+    "ratings": {
+        "critics_score": 89,
+        "users_score": 8.7
+    }
+  }
+]

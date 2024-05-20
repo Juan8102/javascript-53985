@@ -421,12 +421,11 @@ footer {
 }
 
 .search__bar__games__item img {
-    width: 65px;
     margin-right: 6px;
     border-radius: 5px;
 }
 
-#search__add__to__cart__button {
+.search__add__to__cart__button {
     align-self: center;
     width: 32px;
     height: 32px;
@@ -437,6 +436,20 @@ footer {
 .search__bar__games__item__texts {
     line-height: 155%;
     text-wrap: nowrap;
+}
+
+.search__bar__games__item div a {
+    text-decoration: none;
+    color: white;
+}
+
+.search__bar__games__item div h4 {
+    cursor: pointer;
+}
+
+.search__bar__games__item div h4:hover {
+    color: rgb(180, 180, 180);
+    text-decoration: underline;
 }
 
 .games__filter__sidebar__items {
@@ -523,7 +536,7 @@ footer {
 .card {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 45% 53%;
+    grid-template-rows: 45% 55%;
     grid-gap: 2%;
     width: 220px;
     height: 280px;
@@ -537,12 +550,26 @@ footer {
     text-decoration: none;
 }
 
-#product__image__container {
+.product__image__container {
     width: 100%;
     height: 100%;
 }
 
-#card__img {
+.all__texts__container{
+    display: flex;
+    flex-direction: column;
+}
+
+.card__buttons__container {
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: auto;
+    width: 100%;
+}
+
+.card__img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -564,7 +591,7 @@ footer {
     margin: 4px 0;
     padding: 5px 6px;
 
-    border-radius: 6px;
+    border-radius: 8px;
     border: none;
     cursor: pointer;
 }
@@ -576,6 +603,13 @@ footer {
 
 .cart__card__button {
     background-color: rgb(64, 237, 64);
+}
+
+.card__buttons__container a {
+    display: flex;
+    justify-content: center;
+    width: 35px;
+    height: 43px;
 }
 
 #cards__end {
@@ -623,78 +657,142 @@ footer {
 /* PRODUCTOS */
 /* INDEX.HTML*/
 
-/* CONTACT.HTML */
-#contact__form__container {
+/* DETALLE DE PRODUCTO */
+#product__info--center {
     display: flex;
     justify-content: center;
-    align-content: center;
-    height: 553px;
-    padding: 40px;
-}
-
-#contact__form {
-    display: flex;
-    flex-direction: column;
-
-    min-width: 260px;
-    width: 340px;
-    height: min-content;
-
+    width: 100%;
+    min-height: 553px;
     padding: 20px;
-    background: linear-gradient(.51turn, #8100eb, #5d00aa);
-    border-radius: 8px;
-    outline: solid 2px white;
-    box-shadow: 0 0 24px 0 white;
 }
 
-.contact__form__input__container {
+#product__info__container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    width: 50%;
+    padding: 20px;
+    border: solid 2px white;
+    background: linear-gradient(.37turn, #121212, #303030);
+}
+
+#error__info__container {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border: solid 2px white;
+    background: linear-gradient(.37turn, #121212, #303030);
 }
 
-.contact__form__input {
-    min-height: 30px;
-    margin: 4px 0;
-    padding: 8px;
-
-    color: white;
-    background-color: transparent;
-    border: none;
-    border-radius: 6px;
-    outline: solid 2px white;
-    transition: all .2s;
-    resize: none;
-}
-
-.contact__form__input::placeholder {
-    color: #ffffffb1;
-}
-
-#contact__form textarea {
-    height: 54px;
-}
-
-.contact__form__input:hover,
-.contact__form__input:focus,
-#contact__form__submit:hover,
-#contact__form__submit:focus {
-    background-color: #31363fcb;
-}
-
-#contact__form__submit {
-    width: min-content;
+#error__button {
+    margin: 8px;
     padding: 6px 8px;
-    color: white;
-
-    background-color: transparent;
     border: none;
-    border-radius: 6px;
-    outline: solid 2px white;
-    transition: all .2s;
+    border-radius: 4px;
     cursor: pointer;
+    transition: all .2s;
 }
-/* CONTACT.HTML */
+
+#error__button:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+#side__info img {
+    max-width: 90%;
+}
+
+#side__info button {
+    margin: 6px 0;
+    padding: 8px;
+    font-weight: 400;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+#side__info button:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+#side__info span {
+    font-weight: 400;
+}
+
+.side__info__item__container {
+    margin-bottom: 20px;
+}
+
+#main__info {
+    display: grid;
+    grid-area: 
+        "description" "description"
+        "modes" "modes"
+        "languages" "languages"
+        "minimum" "recommended" /* AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII */
+    ;
+    grid-template-rows: min-content;
+    border-left: solid 1px white;
+    padding: 6px 20px;
+}
+
+#main__info span {
+    font-weight: 400;
+}
+
+.main__info__item__container span {
+    font-weight: 400;
+}
+
+#system__requirements__minimum {
+    color: rgb(255, 31, 31);
+}
+
+#system__requirements__recommended {
+    color: rgb(27, 196, 27);
+}
+
+.main__info__item__container li {
+    list-style-type: none;
+    margin-left: 6px;
+}
+
+.main__info__item__container h2 {
+    margin-bottom: 6px;
+    padding: 8px 0;
+    border-bottom: solid 1px white;
+}
+
+#product__system__minimum__requirements h2 {
+    margin: 20px 0 10px 0;
+}
+
+#product__description {
+    grid-area: "description";
+    margin-bottom: 15px;
+}
+
+#product__modes {
+    margin-bottom: 15px;
+    grid-area: "modes";
+}
+
+#product__languages {
+    grid-area: "languages";
+}
+
+#product__system__minimum__requirements {
+    align-self: flex-end;
+    grid-area: "minimum";
+    margin-bottom: 20px;
+}
+
+#product__system__recommended__requirements {
+    grid-area: "recommended";
+}
+
+/* DETALLE DE PRODUCTO */
 
 /* PAYMENT.HTML */
 #payment__card__container {
@@ -753,6 +851,26 @@ footer {
     height: 77%;
     padding: 14px 20px;
     overflow-y: scroll;
+}
+
+#payment__error__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#payment__error__button {
+    margin: 12px;
+    padding: 6px 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#payment__error__button:hover {
+    background-color: rgb(200, 200, 200);
 }
 /* PAYMENT.HTML */
 
