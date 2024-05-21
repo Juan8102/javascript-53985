@@ -38,32 +38,12 @@ header {
 
 #header__container {
     display: grid;
-    grid-template-columns: 4% 66% 30%;
-    justify-content: center;
+    grid-template-columns: 70% 30%;
     align-items: center;
 
     width: 100%;
     height: 100%;
 }
-
-/* CUENTA */
-#account__manager {
-    width: 46px;
-    height: 46px;
-    margin-left: 40%;
-    outline: solid 2px black;
-    outline-offset: -1px;
-    border-radius: 100%;
-    overflow: hidden;
-}
-
-#account__manager img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    cursor: pointer;
-}
-/* CUENTA */
 
 #header__links__list {
     display: flex;
@@ -73,7 +53,6 @@ header {
 
 .header__link {
     margin: 0 14px;
-    font-weight: 500;
 }
 
 .header__link:first-child {
@@ -481,6 +460,12 @@ footer {
     padding-top: 10px;
 }
 
+.filters__item {
+    margin-right: 4px;
+    position: relative;
+    top: 1.6px;
+}
+
 /* PRODUCTOS */
 #games__container {
     display: grid;
@@ -685,8 +670,13 @@ footer {
     background: linear-gradient(.37turn, #121212, #303030);
 }
 
-#error__button {
+#error__info__container a {
+    width: max-content;
     margin: 8px;
+}
+
+#error__button {
+    
     padding: 6px 8px;
     border: none;
     border-radius: 4px;

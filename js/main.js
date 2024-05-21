@@ -5,7 +5,6 @@ function getJSONProducts() {
         return response.json();
     })
     .then((responseJSON) => {
-        localStorage.setItem("chosenProduct", "")
         products = responseJSON;
         currentArray = products;
 
