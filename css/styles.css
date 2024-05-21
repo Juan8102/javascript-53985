@@ -351,7 +351,7 @@ footer {
 #games__filter__sidebar {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 305px 110px 190px;
+    grid-template-rows: 425px 110px;
     justify-content: center;
     height: min-content;
 
@@ -435,25 +435,6 @@ footer {
     width: 100%;
     padding: 8px 4px;
     border-bottom: solid 1px white;
-}
-
-#games__filter__categories {
-    display: grid;
-    grid-template-columns: repeat(3, 25%);
-    grid-template-rows: repeat(7, 14.3%);
-    justify-content: space-between;
-    align-items: center;
-    border: none;
-}
-
-#games__filter__categories label {
-    display: flex;
-    font-size: 14px;
-    text-wrap: nowrap;
-}
-
-#games__filter__categories label input {
-    margin-right: 2px;
 }
 
 #price__range__text {
