@@ -33,6 +33,7 @@ function resolveAPI() {
     
     getCart();
     renderProducts(currentArray);
+    renderModesFilter();
     verifyPage();
 }
 
@@ -258,6 +259,25 @@ function filterByPrice() {
             verifyPage(3);
         }
     }
+}
+
+const modesFilterContainer = document.getElementById("games__filter__modes");
+
+function renderModesFilter() {
+    const singlePlayerLabel = document.createElement("label");
+
+    const singlePlayerCheckbox = document.createElement("input");
+    singlePlayerCheckbox.className = "filters__item";
+    singlePlayerCheckbox.setAttribute("type", "checkbox");
+
+    singlePlayerLabel.append(singlePlayerCheckbox);
+    singlePlayerLabel.innerHTML += "Single-player";
+
+    modesFilterContainer.append(singlePlayerLabel);
+}
+
+function filterByMode() {
+    
 }
 
 //Busqueda de productos
