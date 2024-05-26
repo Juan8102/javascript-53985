@@ -14,8 +14,7 @@ const payLink = document.getElementById("cart__payment__link");
 
 function getCart() {
     if (localStorage.cart !== undefined) {
-        let cartLS = JSON.parse(localStorage.cart);
-        cart = cartLS;
+        cart = JSON.parse(localStorage.cart); //MODIFICADO
         cartIndicator.innerText = `${cart.length}`;
     }
 }
@@ -186,8 +185,7 @@ function addToCart(product) {
     else { //Si el producto que se quiere agregar al carrito, NO está en él
         cart.push(product);
 
-        const cartJson = JSON.stringify(cart);
-        localStorage.setItem("cart", cartJson);
+        localStorage.setItem("cart", JSON.stringify(cart));
 
         cartIndicator.innerText = `${cart.length}`;
 
@@ -215,8 +213,7 @@ function deleteFromCart(product) {
     const indexproduct = cart.indexOf(product);
     cart.splice(indexproduct, 1);
 
-    const cartJSON = JSON.stringify(cart);
-    localStorage.cart = cartJSON;
+    localStorage.cart = JSON.stringify(cart);
     cartIndicator.innerText = `${cart.length}`;
 
     renderCart();

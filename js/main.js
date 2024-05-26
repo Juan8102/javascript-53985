@@ -23,7 +23,6 @@ getJSONProducts();
 
 //Simulación de un error en la API
 let isAPIWorking = false;
-const loadingContainer = document.getElementById("loading__container");
 const loadingElements = document.getElementById("loading__elements");
 const loadingIcon = document.getElementById("loading__icon");
 
@@ -33,7 +32,7 @@ function resolveAPI() {
     
     getCart();
     renderProducts(currentArray);
-    renderModesFilter();
+    /* renderModesFilter(); */
     verifyPage();
 }
 
@@ -261,7 +260,7 @@ function filterByPrice() {
     }
 }
 
-const modesFilterContainer = document.getElementById("games__filter__modes");
+/* const modesFilterContainer = document.getElementById("games__filter__modes");
 
 function renderModesFilter() {
     const singlePlayerLabel = document.createElement("label");
@@ -278,7 +277,7 @@ function renderModesFilter() {
 
 function filterByMode() {
     
-}
+} */
 
 //Busqueda de productos
 const searchProductsContainer = document.getElementById("search__bar__games");
